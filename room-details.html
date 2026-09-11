@@ -1,0 +1,2640 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Luxury room details and reservation at Grand Horizon Hotel."
+    >
+
+    <title>Luxury Suite | Grand Horizon Hotel</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         TAILWIND CSS
+    ====================================================== -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    fontFamily: {
+
+                        poppins: ['Poppins', 'sans-serif'],
+
+                        playfair: ['Playfair Display', 'serif']
+
+                    },
+
+                    colors: {
+
+                        gold: '#c9a227',
+
+                        dark: '#111827',
+
+                        cream: '#f8f6f0'
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+    <!-- =====================================================
+         CUSTOM CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+
+    <style>
+
+        /* Gallery thumbnail */
+
+        .gallery-thumb {
+
+            cursor: pointer;
+
+            transition: all .3s ease;
+
+        }
+
+
+        .gallery-thumb.active {
+
+            opacity: 1;
+
+            outline: 2px solid #c9a227;
+
+            outline-offset: 2px;
+
+        }
+
+
+        .gallery-thumb:not(.active) {
+
+            opacity: .65;
+
+        }
+
+
+        .gallery-thumb:hover {
+
+            opacity: 1;
+
+        }
+
+
+        /* Amenity icon */
+
+        .amenity-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f8f6f0;
+
+            color: #c9a227;
+
+            flex-shrink: 0;
+
+        }
+
+
+        /* FAQ */
+
+        .faq-answer {
+
+            display: none;
+
+        }
+
+
+        .faq-item.open .faq-answer {
+
+            display: block;
+
+        }
+
+
+        .faq-item.open .faq-icon {
+
+            transform: rotate(180deg);
+
+        }
+
+
+        .faq-icon {
+
+            transition: transform .3s ease;
+
+        }
+
+
+        /* Booking card */
+
+        .booking-card {
+
+            position: sticky;
+
+            top: 110px;
+
+        }
+
+
+        /* Main image */
+
+        #mainRoomImage {
+
+            transition: opacity .25s ease;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="font-poppins text-gray-800 bg-white">
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="hidden md:block bg-gray-950 text-gray-300 text-sm">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-10">
+
+
+            <!-- Contact -->
+
+            <div class="flex items-center gap-6">
+
+                <span>
+
+                    <i class="fa-solid fa-phone text-gold mr-2"></i>
+
+                    +880 1924252627
+
+                </span>
+
+
+                <span>
+
+                    <i class="fa-solid fa-envelope text-gold mr-2"></i>
+
+                    info@grandhorizon.com
+
+                </span>
+
+            </div>
+
+
+            <!-- Social -->
+
+            <div class="flex items-center gap-4">
+
+                <a
+                    href="#"
+                    class="hover:text-gold transition"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+
+                <a
+                    href="#"
+                    class="hover:text-gold transition"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+                <a
+                    href="#"
+                    class="hover:text-gold transition"
+                >
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header
+    id="navbar"
+    class="absolute top-0 md:top-10 left-0 w-full z-50 transition-all duration-300"
+>
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="text-white"
+            >
+
+                <div
+                    class="text-2xl md:text-3xl font-playfair font-bold"
+                >
+                    Grand Horizon
+                </div>
+
+
+                <div
+                    class="text-[10px] md:text-xs tracking-[5px] text-gold"
+                >
+                    LUXURY HOTEL
+                </div>
+
+            </a>
+
+
+
+            <!-- Desktop Navigation -->
+
+            <nav class="hidden lg:flex items-center gap-8">
+
+
+                <a
+                    href="index.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="rooms.html"
+                    class="text-gold font-medium"
+                >
+                    Rooms
+                </a>
+
+
+                <a
+                    href="about.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    About
+                </a>
+
+
+                <a
+                    href="restaurant.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Restaurant
+                </a>
+
+
+                <a
+                    href="gallery.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Gallery
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+
+            <!-- Book Now -->
+
+            <div class="hidden lg:block">
+
+                <a
+                    href="booking.html"
+                    class="inline-flex items-center gap-2 bg-gold text-white px-6 py-3 font-medium hover:bg-white hover:text-gray-900 transition duration-300"
+                >
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Book Now
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Mobile Button -->
+
+            <button
+                id="menuBtn"
+                class="lg:hidden text-white text-2xl"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Mobile Menu -->
+
+    <div
+        id="mobileMenu"
+        class="hidden lg:hidden bg-gray-950 border-t border-gray-800"
+    >
+
+        <div class="px-6 py-5 space-y-4">
+
+
+            <a
+                href="index.html"
+                class="block text-white hover:text-gold"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="rooms.html"
+                class="block text-gold"
+            >
+                Rooms
+            </a>
+
+
+            <a
+                href="about.html"
+                class="block text-white hover:text-gold"
+            >
+                About
+            </a>
+
+
+            <a
+                href="restaurant.html"
+                class="block text-white hover:text-gold"
+            >
+                Restaurant
+            </a>
+
+
+            <a
+                href="gallery.html"
+                class="block text-white hover:text-gold"
+            >
+                Gallery
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="block text-white hover:text-gold"
+            >
+                Contact
+            </a>
+
+
+            <a
+                href="booking.html"
+                class="block bg-gold text-white text-center px-5 py-3"
+            >
+                Book Now
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PAGE HERO
+========================================================= -->
+
+<section
+    class="relative h-[430px] flex items-center justify-center bg-cover bg-center"
+    style="
+        background-image:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.68)),
+        url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=2000&q=90');
+    "
+>
+
+    <div class="text-center text-white px-6 pt-16">
+
+        <p
+            class="text-gold uppercase tracking-[5px] text-sm mb-5"
+        >
+            Accommodation
+        </p>
+
+
+        <h1
+            class="font-playfair text-5xl md:text-6xl font-semibold mb-5"
+        >
+            Luxury Suite
+        </h1>
+
+
+        <div
+            class="flex items-center justify-center gap-3 text-sm text-gray-300"
+        >
+
+            <a
+                href="rooms.html"
+                class="hover:text-gold"
+            >
+                Rooms
+            </a>
+
+
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+
+
+            <span class="text-white">
+                Luxury Suite
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MAIN ROOM DETAILS
+========================================================= -->
+
+<section class="py-20 md:py-28">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-3 gap-10">
+
+
+            <!-- =================================================
+                 LEFT CONTENT
+            ================================================= -->
+
+            <div class="lg:col-span-2">
+
+
+                <!-- =================================================
+                     IMAGE GALLERY
+                ================================================= -->
+
+                <div class="mb-12">
+
+
+                    <!-- Main Image -->
+
+                    <div
+                        class="relative overflow-hidden bg-gray-100 mb-4"
+                    >
+
+                        <img
+                            id="mainRoomImage"
+                            src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=90"
+                            alt="Luxury Suite"
+                            class="w-full h-[420px] md:h-[560px] object-cover"
+                        >
+
+
+                        <!-- Image counter -->
+
+                        <div
+                            class="absolute bottom-5 right-5 bg-black/70 text-white text-sm px-4 py-2"
+                        >
+
+                            <i class="fa-solid fa-images mr-2 text-gold"></i>
+
+                            <span id="imageCounter">
+                                1 / 5
+                            </span>
+
+                        </div>
+
+
+                        <!-- Fullscreen -->
+
+                        <button
+                            id="fullscreenBtn"
+                            class="absolute top-5 right-5 w-11 h-11 bg-black/70 text-white flex items-center justify-center hover:bg-gold transition"
+                            aria-label="View fullscreen"
+                        >
+
+                            <i class="fa-solid fa-expand"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Thumbnails -->
+
+                    <div class="grid grid-cols-5 gap-3">
+
+
+                        <button
+                            class="gallery-thumb active overflow-hidden"
+                            data-image="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=90"
+                            data-number="1"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=400&q=80"
+                                alt="Luxury Suite"
+                                class="w-full h-20 md:h-28 object-cover"
+                            >
+
+                        </button>
+
+
+
+                        <button
+                            class="gallery-thumb overflow-hidden"
+                            data-image="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1400&q=90"
+                            data-number="2"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=400&q=80"
+                                alt="Suite Interior"
+                                class="w-full h-20 md:h-28 object-cover"
+                            >
+
+                        </button>
+
+
+
+                        <button
+                            class="gallery-thumb overflow-hidden"
+                            data-image="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1400&q=90"
+                            data-number="3"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=400&q=80"
+                                alt="Hotel Bedroom"
+                                class="w-full h-20 md:h-28 object-cover"
+                            >
+
+                        </button>
+
+
+
+                        <button
+                            class="gallery-thumb overflow-hidden"
+                            data-image="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=1400&q=90"
+                            data-number="4"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=400&q=80"
+                                alt="Luxury Bathroom"
+                                class="w-full h-20 md:h-28 object-cover"
+                            >
+
+                        </button>
+
+
+
+                        <button
+                            class="gallery-thumb overflow-hidden"
+                            data-image="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=90"
+                            data-number="5"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=400&q=80"
+                                alt="Hotel Pool"
+                                class="w-full h-20 md:h-28 object-cover"
+                            >
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ROOM HEADER
+                ================================================= -->
+
+                <div
+                    class="flex flex-col md:flex-row md:items-start md:justify-between gap-5 mb-8"
+                >
+
+                    <div>
+
+
+                        <div
+                            class="inline-block bg-gold text-white text-xs uppercase tracking-wider px-4 py-2 mb-4"
+                        >
+                            Luxury Collection
+                        </div>
+
+
+                        <h2
+                            class="font-playfair text-4xl md:text-5xl text-gray-900 mb-4"
+                        >
+                            Luxury Suite
+                        </h2>
+
+
+                        <div
+                            class="flex items-center gap-4"
+                        >
+
+                            <div class="text-gold text-sm">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <span class="text-sm text-gray-500">
+                                4.9 · 128 Reviews
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="text-left md:text-right">
+
+                        <div
+                            class="text-3xl font-semibold text-gray-900"
+                        >
+                            $220
+                        </div>
+
+                        <div class="text-sm text-gray-500">
+                            per night
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ROOM INFO
+                ================================================= -->
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 border-y border-gray-200 py-7 mb-10"
+                >
+
+
+                    <div class="text-center border-r border-gray-200">
+
+                        <div class="text-gold text-xl mb-2">
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                        </div>
+
+                        <div class="text-sm font-medium text-gray-900">
+                            Guests
+                        </div>
+
+                        <div class="text-xs text-gray-500 mt-1">
+                            3 Guests
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="text-center md:border-r border-gray-200">
+
+                        <div class="text-gold text-xl mb-2">
+
+                            <i class="fa-solid fa-bed"></i>
+
+                        </div>
+
+                        <div class="text-sm font-medium text-gray-900">
+                            Bed
+                        </div>
+
+                        <div class="text-xs text-gray-500 mt-1">
+                            King Bed
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="text-center border-r border-gray-200 mt-7 md:mt-0">
+
+                        <div class="text-gold text-xl mb-2">
+
+                            <i class="fa-solid fa-ruler-combined"></i>
+
+                        </div>
+
+                        <div class="text-sm font-medium text-gray-900">
+                            Size
+                        </div>
+
+                        <div class="text-xs text-gray-500 mt-1">
+                            70 m²
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="text-center mt-7 md:mt-0">
+
+                        <div class="text-gold text-xl mb-2">
+
+                            <i class="fa-solid fa-mountain-sun"></i>
+
+                        </div>
+
+                        <div class="text-sm font-medium text-gray-900">
+                            View
+                        </div>
+
+                        <div class="text-xs text-gray-500 mt-1">
+                            Premium View
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DESCRIPTION
+                ================================================= -->
+
+                <div class="mb-12">
+
+
+                    <h3
+                        class="font-playfair text-3xl text-gray-900 mb-5"
+                    >
+                        About This Room
+                    </h3>
+
+
+                    <p
+                        class="text-gray-600 leading-8 mb-5"
+                    >
+
+                        Experience the ultimate in comfort and elegance
+                        in our beautifully designed Luxury Suite.
+                        This spacious accommodation combines contemporary
+                        design with timeless luxury.
+
+                    </p>
+
+
+                    <p
+                        class="text-gray-600 leading-8"
+                    >
+
+                        Featuring a separate living area, premium
+                        king-size bed, luxury bathroom and stunning views,
+                        this suite is perfect for couples, business
+                        travelers and guests looking for an exceptional
+                        hotel experience.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ROOM HIGHLIGHTS
+                ================================================= -->
+
+                <div class="mb-12">
+
+
+                    <h3
+                        class="font-playfair text-3xl text-gray-900 mb-7"
+                    >
+                        Room Highlights
+                    </h3>
+
+
+                    <div
+                        class="grid md:grid-cols-2 gap-4"
+                    >
+
+
+                        <div
+                            class="flex items-center gap-4 bg-cream p-5"
+                        >
+
+                            <div class="amenity-icon">
+
+                                <i class="fa-solid fa-city text-lg"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4 class="font-medium text-gray-900">
+                                    Panoramic View
+                                </h4>
+
+                                <p class="text-sm text-gray-500">
+                                    Beautiful city skyline
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                            class="flex items-center gap-4 bg-cream p-5"
+                        >
+
+                            <div class="amenity-icon">
+
+                                <i class="fa-solid fa-couch text-lg"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4 class="font-medium text-gray-900">
+                                    Separate Living Area
+                                </h4>
+
+                                <p class="text-sm text-gray-500">
+                                    Spacious private lounge
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                            class="flex items-center gap-4 bg-cream p-5"
+                        >
+
+                            <div class="amenity-icon">
+
+                                <i class="fa-solid fa-bath text-lg"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4 class="font-medium text-gray-900">
+                                    Luxury Bathroom
+                                </h4>
+
+                                <p class="text-sm text-gray-500">
+                                    Premium bathroom amenities
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                            class="flex items-center gap-4 bg-cream p-5"
+                        >
+
+                            <div class="amenity-icon">
+
+                                <i class="fa-solid fa-mug-hot text-lg"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h4 class="font-medium text-gray-900">
+                                    Coffee Station
+                                </h4>
+
+                                <p class="text-sm text-gray-500">
+                                    Complimentary coffee & tea
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     AMENITIES
+                ================================================= -->
+
+                <div class="mb-12">
+
+
+                    <h3
+                        class="font-playfair text-3xl text-gray-900 mb-7"
+                    >
+                        Room Amenities
+                    </h3>
+
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-3 gap-y-5 gap-x-6"
+                    >
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-wifi text-gold w-5"></i>
+
+                            Free Wi-Fi
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-tv text-gold w-5"></i>
+
+                            Smart TV
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-snowflake text-gold w-5"></i>
+
+                            Air Conditioning
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-vault text-gold w-5"></i>
+
+                            Safe Box
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-mug-hot text-gold w-5"></i>
+
+                            Coffee Machine
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-wine-glass text-gold w-5"></i>
+
+                            Mini Bar
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-bath text-gold w-5"></i>
+
+                            Bathtub
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-shirt text-gold w-5"></i>
+
+                            Bathrobe
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-phone text-gold w-5"></i>
+
+                            Telephone
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-hairdryer text-gold w-5"></i>
+
+                            Hair Dryer
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-lock text-gold w-5"></i>
+
+                            Electronic Lock
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-gray-600">
+
+                            <i class="fa-solid fa-bell-concierge text-gold w-5"></i>
+
+                            Room Service
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ROOM POLICY
+                ================================================= -->
+
+                <div
+                    class="border border-gray-200 p-6 md:p-8"
+                >
+
+                    <h3
+                        class="font-playfair text-3xl text-gray-900 mb-6"
+                    >
+                        Room Policies
+                    </h3>
+
+
+                    <div
+                        class="grid md:grid-cols-2 gap-6"
+                    >
+
+
+                        <div>
+
+                            <div
+                                class="flex items-center gap-3 mb-2"
+                            >
+
+                                <i
+                                    class="fa-solid fa-clock text-gold"
+                                ></i>
+
+                                <span class="font-medium">
+                                    Check-in
+                                </span>
+
+                            </div>
+
+
+                            <p class="text-sm text-gray-500">
+                                From 2:00 PM
+                            </p>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <div
+                                class="flex items-center gap-3 mb-2"
+                            >
+
+                                <i
+                                    class="fa-solid fa-clock text-gold"
+                                ></i>
+
+                                <span class="font-medium">
+                                    Check-out
+                                </span>
+
+                            </div>
+
+
+                            <p class="text-sm text-gray-500">
+                                Before 12:00 PM
+                            </p>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <div
+                                class="flex items-center gap-3 mb-2"
+                            >
+
+                                <i
+                                    class="fa-solid fa-ban text-gold"
+                                ></i>
+
+                                <span class="font-medium">
+                                    Cancellation
+                                </span>
+
+                            </div>
+
+
+                            <p class="text-sm text-gray-500">
+                                Free cancellation up to 48 hours
+                            </p>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <div
+                                class="flex items-center gap-3 mb-2"
+                            >
+
+                                <i
+                                    class="fa-solid fa-smoking-ban text-gold"
+                                ></i>
+
+                                <span class="font-medium">
+                                    Smoking
+                                </span>
+
+                            </div>
+
+
+                            <p class="text-sm text-gray-500">
+                                Non-smoking room
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT BOOKING CARD
+            ================================================= -->
+
+            <div>
+
+
+                <div
+                    class="booking-card bg-white border border-gray-200 shadow-xl"
+                >
+
+
+                    <!-- Card Header -->
+
+                    <div
+                        class="bg-gray-950 text-white p-6"
+                    >
+
+                        <p
+                            class="text-gold uppercase tracking-[3px] text-xs mb-2"
+                        >
+                            Reserve Your Stay
+                        </p>
+
+
+                        <h3
+                            class="font-playfair text-2xl"
+                        >
+                            Luxury Suite
+                        </h3>
+
+                    </div>
+
+
+
+                    <!-- Booking Form -->
+
+                    <div class="p-6">
+
+
+                        <!-- Check In -->
+
+                        <div class="mb-5">
+
+                            <label
+                                class="block text-xs uppercase tracking-wider text-gray-500 mb-2"
+                            >
+                                Check In
+                            </label>
+
+
+                            <div class="relative">
+
+                                <i
+                                    class="fa-regular fa-calendar absolute left-4 top-1/2 -translate-y-1/2 text-gold"
+                                ></i>
+
+
+                                <input
+                                    type="date"
+                                    id="bookingCheckIn"
+                                    class="w-full border border-gray-200 px-11 py-3.5 outline-none focus:border-gold"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Check Out -->
+
+                        <div class="mb-5">
+
+                            <label
+                                class="block text-xs uppercase tracking-wider text-gray-500 mb-2"
+                            >
+                                Check Out
+                            </label>
+
+
+                            <div class="relative">
+
+                                <i
+                                    class="fa-regular fa-calendar absolute left-4 top-1/2 -translate-y-1/2 text-gold"
+                                ></i>
+
+
+                                <input
+                                    type="date"
+                                    id="bookingCheckOut"
+                                    class="w-full border border-gray-200 px-11 py-3.5 outline-none focus:border-gold"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Guests -->
+
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+
+
+                            <div>
+
+                                <label
+                                    class="block text-xs uppercase tracking-wider text-gray-500 mb-2"
+                                >
+                                    Adults
+                                </label>
+
+
+                                <select
+                                    id="bookingAdults"
+                                    class="w-full border border-gray-200 px-3 py-3.5 outline-none focus:border-gold"
+                                >
+
+                                    <option value="1">
+                                        1
+                                    </option>
+
+                                    <option value="2" selected>
+                                        2
+                                    </option>
+
+                                    <option value="3">
+                                        3
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div>
+
+                                <label
+                                    class="block text-xs uppercase tracking-wider text-gray-500 mb-2"
+                                >
+                                    Children
+                                </label>
+
+
+                                <select
+                                    id="bookingChildren"
+                                    class="w-full border border-gray-200 px-3 py-3.5 outline-none focus:border-gold"
+                                >
+
+                                    <option value="0" selected>
+                                        0
+                                    </option>
+
+                                    <option value="1">
+                                        1
+                                    </option>
+
+                                    <option value="2">
+                                        2
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Price -->
+
+                        <div
+                            class="border-t border-gray-200 pt-5 space-y-3"
+                        >
+
+
+                            <div
+                                class="flex justify-between text-sm text-gray-500"
+                            >
+
+                                <span>
+                                    Room / night
+                                </span>
+
+                                <span>
+                                    $220
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="flex justify-between text-sm text-gray-500"
+                            >
+
+                                <span>
+                                    Nights
+                                </span>
+
+                                <span id="totalNights">
+                                    1
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="flex justify-between text-sm text-gray-500"
+                            >
+
+                                <span>
+                                    Service Fee
+                                </span>
+
+                                <span id="serviceFee">
+                                    $22
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="border-t border-gray-200 pt-4 flex justify-between items-center"
+                            >
+
+                                <span
+                                    class="font-medium text-gray-900"
+                                >
+                                    Total
+                                </span>
+
+
+                                <span
+                                    id="totalPrice"
+                                    class="text-2xl font-semibold text-gold"
+                                >
+                                    $242
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Reserve -->
+
+                        <button
+                            id="reserveBtn"
+                            class="w-full bg-gold hover:bg-gray-950 text-white py-4 mt-6 font-medium transition duration-300"
+                        >
+
+                            <i
+                                class="fa-solid fa-calendar-check mr-2"
+                            ></i>
+
+                            Reserve This Room
+
+                        </button>
+
+
+                        <!-- Secure -->
+
+                        <div
+                            class="flex items-center justify-center gap-2 text-xs text-gray-400 mt-4"
+                        >
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Secure reservation
+
+                        </div>
+
+
+                        <!-- Booking Message -->
+
+                        <div
+                            id="bookingMessage"
+                            class="hidden mt-4 p-3 text-sm"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Contact Card -->
+
+                <div
+                    class="bg-cream p-6 mt-6"
+                >
+
+                    <div
+                        class="flex items-start gap-4"
+                    >
+
+                        <div
+                            class="w-12 h-12 bg-white flex items-center justify-center text-gold flex-shrink-0"
+                        >
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-xs uppercase tracking-wider text-gray-500">
+                                Need Help?
+                            </p>
+
+
+                            <h4 class="font-semibold text-gray-900 mt-1">
+                                +880 1924252627
+                            </h4>
+
+
+                            <p class="text-sm text-gray-500 mt-1">
+                                Our team is available 24/7.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="bg-cream py-24">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+
+        <div class="text-center mb-12">
+
+            <p
+                class="text-gold uppercase tracking-[4px] text-sm mb-3"
+            >
+                Frequently Asked Questions
+            </p>
+
+
+            <h2
+                class="font-playfair text-4xl md:text-5xl text-gray-900"
+            >
+                Room Questions
+            </h2>
+
+        </div>
+
+
+
+        <div class="space-y-4">
+
+
+            <!-- FAQ 1 -->
+
+            <div
+                class="faq-item bg-white border border-gray-100"
+            >
+
+                <button
+                    class="faq-question w-full flex items-center justify-between p-6 text-left"
+                >
+
+                    <span class="font-medium text-gray-900">
+                        Can I cancel my reservation?
+                    </span>
+
+
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-gold"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="faq-answer px-6 pb-6 text-gray-500 text-sm leading-7"
+                >
+
+                    Yes. This room includes free cancellation up to
+                    48 hours before your scheduled check-in date.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 2 -->
+
+            <div
+                class="faq-item bg-white border border-gray-100"
+            >
+
+                <button
+                    class="faq-question w-full flex items-center justify-between p-6 text-left"
+                >
+
+                    <span class="font-medium text-gray-900">
+                        Is breakfast included?
+                    </span>
+
+
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-gold"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="faq-answer px-6 pb-6 text-gray-500 text-sm leading-7"
+                >
+
+                    Breakfast can be included depending on the selected
+                    reservation package. You can choose your preferred
+                    package during booking.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 3 -->
+
+            <div
+                class="faq-item bg-white border border-gray-100"
+            >
+
+                <button
+                    class="faq-question w-full flex items-center justify-between p-6 text-left"
+                >
+
+                    <span class="font-medium text-gray-900">
+                        Does the room have free Wi-Fi?
+                    </span>
+
+
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-gold"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="faq-answer px-6 pb-6 text-gray-500 text-sm leading-7"
+                >
+
+                    Yes. Complimentary high-speed Wi-Fi is available
+                    throughout the hotel and inside every room.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAQ 4 -->
+
+            <div
+                class="faq-item bg-white border border-gray-100"
+            >
+
+                <button
+                    class="faq-question w-full flex items-center justify-between p-6 text-left"
+                >
+
+                    <span class="font-medium text-gray-900">
+                        What time is check-in and check-out?
+                    </span>
+
+
+                    <i
+                        class="faq-icon fa-solid fa-chevron-down text-gold"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="faq-answer px-6 pb-6 text-gray-500 text-sm leading-7"
+                >
+
+                    Standard check-in begins at 2:00 PM and check-out
+                    is before 12:00 PM.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section
+    class="relative py-24 bg-cover bg-center"
+    style="
+        background-image:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.70)),
+        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85');
+    "
+>
+
+    <div
+        class="max-w-4xl mx-auto px-6 text-center text-white"
+    >
+
+        <p
+            class="text-gold uppercase tracking-[4px] text-sm mb-4"
+        >
+            Grand Horizon Hotel
+        </p>
+
+
+        <h2
+            class="font-playfair text-4xl md:text-5xl lg:text-6xl mb-6"
+        >
+            Your Luxury Escape Awaits
+        </h2>
+
+
+        <p
+            class="text-gray-200 leading-7 max-w-2xl mx-auto mb-8"
+        >
+
+            Treat yourself to an unforgettable experience with
+            exceptional comfort, elegant rooms and world-class service.
+
+        </p>
+
+
+        <a
+            href="#reservation"
+            class="inline-flex items-center gap-3 bg-gold hover:bg-white hover:text-gray-900 text-white px-8 py-4 font-medium transition duration-300"
+        >
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Reserve Now
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-gray-950 text-gray-400">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+
+
+            <!-- About -->
+
+            <div>
+
+                <div
+                    class="text-white text-2xl font-playfair font-bold"
+                >
+                    Grand Horizon
+                </div>
+
+
+                <div
+                    class="text-gold text-xs tracking-[4px] mt-1 mb-5"
+                >
+                    LUXURY HOTEL
+                </div>
+
+
+                <p class="leading-7 text-sm">
+
+                    Experience luxury, comfort and exceptional
+                    hospitality in a destination designed for
+                    unforgettable stays.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Quick Links
+                </h3>
+
+
+                <div class="space-y-3 text-sm">
+
+                    <a
+                        href="index.html"
+                        class="block hover:text-gold"
+                    >
+                        Home
+                    </a>
+
+
+                    <a
+                        href="rooms.html"
+                        class="block hover:text-gold"
+                    >
+                        Rooms
+                    </a>
+
+
+                    <a
+                        href="about.html"
+                        class="block hover:text-gold"
+                    >
+                        About
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="block hover:text-gold"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Contact Us
+                </h3>
+
+
+                <div class="space-y-4 text-sm">
+
+
+                    <p>
+
+                        <i
+                            class="fa-solid fa-location-dot text-gold mr-3"
+                        ></i>
+
+                        Dhaka, Bangladesh
+
+                    </p>
+
+
+                    <p>
+
+                        <i
+                            class="fa-solid fa-phone text-gold mr-3"
+                        ></i>
+
+                        +880 1924252627
+
+                    </p>
+
+
+                    <p>
+
+                        <i
+                            class="fa-solid fa-envelope text-gold mr-3"
+                        ></i>
+
+                        info@grandhorizon.com
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Newsletter -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Newsletter
+                </h3>
+
+
+                <p class="text-sm leading-6 mb-4">
+
+                    Subscribe for special offers and hotel updates.
+
+                </p>
+
+
+                <div class="flex">
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        class="w-full bg-gray-900 border border-gray-800 px-4 py-3 outline-none focus:border-gold"
+                    >
+
+
+                    <button
+                        class="bg-gold text-white px-5"
+                    >
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="border-t border-gray-800">
+
+        <div class="max-w-7xl mx-auto px-6 py-5">
+
+            <div class="text-center text-sm">
+
+                © 2026 Grand Horizon Hotel.
+                All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    if (menuBtn && mobileMenu) {
+
+        menuBtn.addEventListener("click", function () {
+
+            mobileMenu.classList.toggle("hidden");
+
+
+            const icon =
+                menuBtn.querySelector("i");
+
+
+            if (
+                mobileMenu.classList.contains("hidden")
+            ) {
+
+                icon.classList.remove("fa-xmark");
+
+                icon.classList.add("fa-bars");
+
+            } else {
+
+                icon.classList.remove("fa-bars");
+
+                icon.classList.add("fa-xmark");
+
+            }
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       NAVBAR SCROLL
+    ===================================================== */
+
+    const navbar =
+        document.getElementById("navbar");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 80) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+
+    const mainImage =
+        document.getElementById("mainRoomImage");
+
+    const imageCounter =
+        document.getElementById("imageCounter");
+
+    const thumbnails =
+        document.querySelectorAll(".gallery-thumb");
+
+
+    thumbnails.forEach(function (thumbnail) {
+
+        thumbnail.addEventListener("click", function () {
+
+
+            const image =
+                this.dataset.image;
+
+            const number =
+                this.dataset.number;
+
+
+            /* Fade */
+
+            mainImage.style.opacity = "0";
+
+
+            setTimeout(function () {
+
+                mainImage.src = image;
+
+                mainImage.style.opacity = "1";
+
+            }, 150);
+
+
+            /* Counter */
+
+            imageCounter.textContent =
+                `${number} / ${thumbnails.length}`;
+
+
+            /* Active thumbnail */
+
+            thumbnails.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            this.classList.add("active");
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       FULLSCREEN IMAGE
+    ===================================================== */
+
+    const fullscreenBtn =
+        document.getElementById("fullscreenBtn");
+
+
+    if (fullscreenBtn) {
+
+        fullscreenBtn.addEventListener("click", function () {
+
+            if (mainImage.requestFullscreen) {
+
+                mainImage.requestFullscreen();
+
+            } else if (mainImage.webkitRequestFullscreen) {
+
+                mainImage.webkitRequestFullscreen();
+
+            }
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       BOOKING DATE
+    ===================================================== */
+
+    const checkIn =
+        document.getElementById("bookingCheckIn");
+
+    const checkOut =
+        document.getElementById("bookingCheckOut");
+
+
+    const today =
+        new Date();
+
+
+    const todayString =
+        today.toISOString().split("T")[0];
+
+
+    if (checkIn) {
+
+        checkIn.min = todayString;
+
+    }
+
+
+    if (checkOut) {
+
+        checkOut.min = todayString;
+
+    }
+
+
+
+    /* =====================================================
+       CALCULATE PRICE
+    ===================================================== */
+
+    const totalNights =
+        document.getElementById("totalNights");
+
+    const serviceFee =
+        document.getElementById("serviceFee");
+
+    const totalPrice =
+        document.getElementById("totalPrice");
+
+
+    const roomPrice = 220;
+
+
+    function calculatePrice() {
+
+
+        let nights = 1;
+
+
+        if (
+            checkIn.value &&
+            checkOut.value
+        ) {
+
+
+            const start =
+                new Date(checkIn.value);
+
+
+            const end =
+                new Date(checkOut.value);
+
+
+            const difference =
+                end.getTime() - start.getTime();
+
+
+            const calculatedNights =
+                Math.ceil(
+                    difference /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            if (calculatedNights > 0) {
+
+                nights =
+                    calculatedNights;
+
+            }
+
+        }
+
+
+        const subtotal =
+            roomPrice * nights;
+
+
+        const fee =
+            Math.round(subtotal * 0.10);
+
+
+        const total =
+            subtotal + fee;
+
+
+        totalNights.textContent =
+            nights;
+
+
+        serviceFee.textContent =
+            `$${fee}`;
+
+
+        totalPrice.textContent =
+            `$${total}`;
+
+    }
+
+
+
+    if (checkIn) {
+
+        checkIn.addEventListener(
+            "change",
+            function () {
+
+
+                checkOut.min =
+                    checkIn.value;
+
+
+                if (
+                    checkOut.value &&
+                    checkOut.value <= checkIn.value
+                ) {
+
+                    checkOut.value = "";
+
+                }
+
+
+                calculatePrice();
+
+            }
+        );
+
+    }
+
+
+    if (checkOut) {
+
+        checkOut.addEventListener(
+            "change",
+            calculatePrice
+        );
+
+    }
+
+
+
+    /* =====================================================
+       RESERVE BUTTON
+    ===================================================== */
+
+    const reserveBtn =
+        document.getElementById("reserveBtn");
+
+    const bookingMessage =
+        document.getElementById("bookingMessage");
+
+
+    if (reserveBtn) {
+
+        reserveBtn.addEventListener(
+            "click",
+            function () {
+
+
+                if (
+                    !checkIn.value ||
+                    !checkOut.value
+                ) {
+
+
+                    bookingMessage.className =
+                        "mt-4 p-3 text-sm bg-red-50 text-red-700";
+
+
+                    bookingMessage.textContent =
+                        "Please select your check-in and check-out dates.";
+
+
+                    return;
+
+                }
+
+
+                if (
+                    checkOut.value <= checkIn.value
+                ) {
+
+
+                    bookingMessage.className =
+                        "mt-4 p-3 text-sm bg-red-50 text-red-700";
+
+
+                    bookingMessage.textContent =
+                        "Check-out date must be after check-in date.";
+
+
+                    return;
+
+                }
+
+
+                /* Get data */
+
+                const adults =
+                    document.getElementById(
+                        "bookingAdults"
+                    ).value;
+
+
+                const children =
+                    document.getElementById(
+                        "bookingChildren"
+                    ).value;
+
+
+                const total =
+                    totalPrice.textContent;
+
+
+                bookingMessage.className =
+                    "mt-4 p-3 text-sm bg-green-50 text-green-700";
+
+
+                bookingMessage.innerHTML = `
+
+                    <i class="fa-solid fa-circle-check mr-2"></i>
+
+                    Room selected successfully.
+
+                    <strong>
+                        ${total}
+                    </strong>
+
+                    estimated total for your stay.
+
+                `;
+
+
+                /* Save temporary booking */
+
+                const bookingData = {
+
+                    room:
+                        "Luxury Suite",
+
+                    checkIn:
+                        checkIn.value,
+
+                    checkOut:
+                        checkOut.value,
+
+                    adults:
+                        adults,
+
+                    children:
+                        children,
+
+                    total:
+                        total
+
+                };
+
+
+                localStorage.setItem(
+                    "hotelBooking",
+                    JSON.stringify(bookingData)
+                );
+
+
+                /*
+                    Later this will redirect to:
+                    booking.html
+                */
+
+                setTimeout(function () {
+
+                    window.location.href =
+                        "booking.html";
+
+                }, 1000);
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener(
+            "click",
+            function () {
+
+
+                const item =
+                    this.closest(".faq-item");
+
+
+                document
+                    .querySelectorAll(".faq-item")
+                    .forEach(function (faq) {
+
+                        if (faq !== item) {
+
+                            faq.classList.remove("open");
+
+                        }
+
+                    });
+
+
+                item.classList.toggle("open");
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       URL ROOM PARAMETER
+    ===================================================== */
+
+    const urlParams =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const room =
+        urlParams.get("room");
+
+
+    /*
+        Future versions can dynamically load
+        room data based on this parameter.
+
+        Example:
+
+        room-details.html?room=deluxe
+        room-details.html?room=executive
+        room-details.html?room=suite
+        room-details.html?room=family
+    */
+
+
+    if (room) {
+
+        console.log(
+            "Selected room:",
+            room
+        );
+
+    }
+
+
+
+    /* =====================================================
+       INITIAL PRICE
+    ===================================================== */
+
+    calculatePrice();
+
+});
+
+</script>
+
+
+</body>
+
+</html>

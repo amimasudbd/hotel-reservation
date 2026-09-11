@@ -1,0 +1,24 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#navbar.scrolled {
+    position: fixed;
+    top: 0;
+    background: rgba(17, 24, 39, 0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+::selection {
+    background: #c9a227;
+    color: white;
+}

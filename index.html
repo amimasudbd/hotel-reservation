@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Luxury Hotel - Book your perfect stay with comfort, elegance and unforgettable experiences."
+    >
+
+    <title>Grand Horizon Hotel | Luxury Stay</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif']
+                    },
+
+                    colors: {
+                        gold: '#c9a227',
+                        dark: '#111827',
+                        cream: '#f8f6f0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="font-poppins text-gray-800 bg-white">
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="hidden md:block bg-gray-950 text-gray-300 text-sm">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-10">
+
+            <div class="flex items-center gap-6">
+
+                <span>
+                    <i class="fa-solid fa-phone text-gold mr-2"></i>
+                    +880 1924252627
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-envelope text-gold mr-2"></i>
+                    info@grandhorizon.com
+                </span>
+
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <a href="#" class="hover:text-gold transition">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="hover:text-gold transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="hover:text-gold transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header
+    id="navbar"
+    class="absolute top-0 md:top-10 left-0 w-full z-50 transition-all duration-300"
+>
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="text-white">
+
+                <div class="text-2xl md:text-3xl font-playfair font-bold">
+                    Grand Horizon
+                </div>
+
+                <div class="text-[10px] md:text-xs tracking-[5px] text-gold">
+                    LUXURY HOTEL
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Menu -->
+
+            <nav class="hidden lg:flex items-center gap-8">
+
+                <a
+                    href="index.html"
+                    class="text-gold font-medium transition"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="rooms.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Rooms
+                </a>
+
+                <a
+                    href="about.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    About
+                </a>
+
+                <a
+                    href="restaurant.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Restaurant
+                </a>
+
+                <a
+                    href="gallery.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Gallery
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="text-white hover:text-gold transition"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Booking Button -->
+
+            <div class="hidden lg:block">
+
+                <a
+                    href="booking.html"
+                    class="inline-flex items-center gap-2 bg-gold text-white px-6 py-3 font-medium hover:bg-white hover:text-gray-900 transition duration-300"
+                >
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Button -->
+
+            <button
+                id="menuBtn"
+                class="lg:hidden text-white text-2xl"
+                aria-label="Open menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+
+    <div
+        id="mobileMenu"
+        class="hidden lg:hidden bg-gray-950 border-t border-gray-800"
+    >
+
+        <div class="px-6 py-5 space-y-4">
+
+            <a
+                href="index.html"
+                class="block text-gold"
+            >
+                Home
+            </a>
+
+            <a
+                href="rooms.html"
+                class="block text-white hover:text-gold"
+            >
+                Rooms
+            </a>
+
+            <a
+                href="about.html"
+                class="block text-white hover:text-gold"
+            >
+                About
+            </a>
+
+            <a
+                href="restaurant.html"
+                class="block text-white hover:text-gold"
+            >
+                Restaurant
+            </a>
+
+            <a
+                href="gallery.html"
+                class="block text-white hover:text-gold"
+            >
+                Gallery
+            </a>
+
+            <a
+                href="contact.html"
+                class="block text-white hover:text-gold"
+            >
+                Contact
+            </a>
+
+            <a
+                href="booking.html"
+                class="block bg-gold text-white text-center px-5 py-3"
+            >
+                Book Now
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section
+    class="relative min-h-screen flex items-center bg-cover bg-center"
+    style="
+        background-image:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.60)),
+        url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=90');
+    "
+>
+
+    <div class="max-w-7xl mx-auto px-6 w-full pt-24">
+
+        <div class="max-w-3xl text-white">
+
+            <p
+                class="text-gold uppercase tracking-[5px] text-sm mb-5"
+            >
+                Welcome to Grand Horizon
+            </p>
+
+            <h1
+                class="font-playfair text-5xl md:text-7xl font-semibold leading-tight mb-6"
+            >
+                Experience Luxury
+                <span class="block text-gold">
+                    Like Never Before
+                </span>
+            </h1>
+
+            <p
+                class="text-gray-200 text-base md:text-lg leading-8 max-w-2xl mb-8"
+            >
+                Discover an unforgettable stay where timeless elegance,
+                modern comfort and exceptional hospitality come together.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+
+                <a
+                    href="rooms.html"
+                    class="bg-gold hover:bg-white hover:text-gray-900 text-white px-7 py-4 font-medium transition duration-300"
+                >
+                    Explore Rooms
+                </a>
+
+                <a
+                    href="#booking"
+                    class="border border-white hover:bg-white hover:text-gray-900 text-white px-7 py-4 font-medium transition duration-300"
+                >
+                    Check Availability
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Scroll Indicator -->
+
+    <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-center"
+    >
+
+        <div class="text-xs uppercase tracking-[3px] mb-2">
+            Scroll
+        </div>
+
+        <i class="fa-solid fa-chevron-down animate-bounce"></i>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOOKING SEARCH
+========================================================= -->
+
+<section
+    id="booking"
+    class="relative -mt-16 z-20 px-6"
+>
+
+    <div
+        class="max-w-6xl mx-auto bg-white shadow-2xl p-5 md:p-7"
+    >
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+
+            <!-- Check In -->
+
+            <div>
+
+                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+                    Check In
+                </label>
+
+                <div class="relative">
+
+                    <i
+                        class="fa-regular fa-calendar absolute left-4 top-1/2 -translate-y-1/2 text-gold"
+                    ></i>
+
+                    <input
+                        type="date"
+                        id="checkIn"
+                        class="w-full border border-gray-200 px-11 py-3.5 outline-none focus:border-gold"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Check Out -->
+
+            <div>
+
+                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+                    Check Out
+                </label>
+
+                <div class="relative">
+
+                    <i
+                        class="fa-regular fa-calendar absolute left-4 top-1/2 -translate-y-1/2 text-gold"
+                    ></i>
+
+                    <input
+                        type="date"
+                        id="checkOut"
+                        class="w-full border border-gray-200 px-11 py-3.5 outline-none focus:border-gold"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Adults -->
+
+            <div>
+
+                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+                    Adults
+                </label>
+
+                <select
+                    id="adults"
+                    class="w-full border border-gray-200 px-4 py-3.5 outline-none focus:border-gold"
+                >
+
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                    <option value="5">5 Adults</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Children -->
+
+            <div>
+
+                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">
+                    Children
+                </label>
+
+                <select
+                    id="children"
+                    class="w-full border border-gray-200 px-4 py-3.5 outline-none focus:border-gold"
+                >
+
+                    <option value="0">No Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                    <option value="3">3 Children</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Search -->
+
+            <div class="flex items-end">
+
+                <button
+                    id="searchBtn"
+                    class="w-full bg-gray-950 hover:bg-gold text-white py-3.5 transition duration-300 font-medium"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass mr-2"></i>
+
+                    Search Rooms
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Search Message -->
+
+        <div
+            id="searchMessage"
+            class="hidden mt-4 p-3 text-sm bg-green-50 text-green-700"
+        ></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WELCOME SECTION
+========================================================= -->
+
+<section class="py-24 md:py-32">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <!-- Images -->
+
+            <div class="relative">
+
+                <img
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                    alt="Luxury hotel room"
+                    class="w-full h-[500px] object-cover"
+                >
+
+                <div
+                    class="absolute -bottom-8 -right-5 md:-right-8 w-52 h-52 border-8 border-white shadow-xl overflow-hidden"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=85"
+                        alt="Hotel interior"
+                        class="w-full h-full object-cover"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Content -->
+
+            <div>
+
+                <p class="text-gold uppercase tracking-[4px] text-sm mb-4">
+                    About Grand Horizon
+                </p>
+
+                <h2
+                    class="font-playfair text-4xl md:text-5xl text-gray-900 leading-tight mb-6"
+                >
+                    A Place Where
+                    <span class="text-gold">
+                        Luxury Meets Comfort
+                    </span>
+                </h2>
+
+                <p class="text-gray-600 leading-8 mb-5">
+                    Welcome to Grand Horizon Hotel, a destination designed
+                    for travelers who appreciate comfort, elegance and
+                    personalized hospitality.
+                </p>
+
+                <p class="text-gray-600 leading-8 mb-8">
+                    From beautifully designed rooms to world-class dining
+                    and exceptional service, every detail has been carefully
+                    created to make your stay truly memorable.
+                </p>
+
+                <a
+                    href="about.html"
+                    class="inline-flex items-center gap-3 border-b-2 border-gold pb-2 text-gray-900 font-medium hover:text-gold transition"
+                >
+                    Discover Our Story
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="bg-cream py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <p class="text-gold uppercase tracking-[4px] text-sm mb-3">
+                Hotel Facilities
+            </p>
+
+            <h2 class="font-playfair text-4xl md:text-5xl text-gray-900">
+                Everything You Need
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
+
+            <!-- Feature -->
+
+            <div class="bg-white p-7 text-center hover:shadow-xl transition">
+
+                <div class="text-gold text-3xl mb-5">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+
+                <h3 class="font-semibold text-gray-900 mb-2">
+                    Free Wi-Fi
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                    High speed internet
+                </p>
+
+            </div>
+
+
+            <div class="bg-white p-7 text-center hover:shadow-xl transition">
+
+                <div class="text-gold text-3xl mb-5">
+                    <i class="fa-solid fa-person-swimming"></i>
+                </div>
+
+                <h3 class="font-semibold text-gray-900 mb-2">
+                    Swimming Pool
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                    Relax and refresh
+                </p>
+
+            </div>
+
+
+            <div class="bg-white p-7 text-center hover:shadow-xl transition">
+
+                <div class="text-gold text-3xl mb-5">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <h3 class="font-semibold text-gray-900 mb-2">
+                    Restaurant
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                    Delicious cuisine
+                </p>
+
+            </div>
+
+
+            <div class="bg-white p-7 text-center hover:shadow-xl transition">
+
+                <div class="text-gold text-3xl mb-5">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+
+                <h3 class="font-semibold text-gray-900 mb-2">
+                    Free Parking
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                    Safe parking space
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-gray-950 text-gray-400">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <!-- About -->
+
+            <div>
+
+                <div class="text-white text-2xl font-playfair font-bold">
+                    Grand Horizon
+                </div>
+
+                <div class="text-gold text-xs tracking-[4px] mt-1 mb-5">
+                    LUXURY HOTEL
+                </div>
+
+                <p class="leading-7 text-sm">
+                    Experience luxury, comfort and exceptional hospitality
+                    in a destination designed for unforgettable stays.
+                </p>
+
+            </div>
+
+
+            <!-- Links -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Quick Links
+                </h3>
+
+                <div class="space-y-3 text-sm">
+
+                    <a href="index.html" class="block hover:text-gold">
+                        Home
+                    </a>
+
+                    <a href="rooms.html" class="block hover:text-gold">
+                        Rooms
+                    </a>
+
+                    <a href="about.html" class="block hover:text-gold">
+                        About
+                    </a>
+
+                    <a href="contact.html" class="block hover:text-gold">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Contact Us
+                </h3>
+
+                <div class="space-y-4 text-sm">
+
+                    <p>
+                        <i class="fa-solid fa-location-dot text-gold mr-3"></i>
+                        Dhaka, Bangladesh
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone text-gold mr-3"></i>
+                        +880 1924252627
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope text-gold mr-3"></i>
+                        info@grandhorizon.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Newsletter -->
+
+            <div>
+
+                <h3 class="text-white font-semibold mb-5">
+                    Newsletter
+                </h3>
+
+                <p class="text-sm leading-6 mb-4">
+                    Subscribe for special offers and hotel updates.
+                </p>
+
+                <div class="flex">
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        class="w-full bg-gray-900 border border-gray-800 px-4 py-3 outline-none focus:border-gold"
+                    >
+
+                    <button
+                        class="bg-gold text-white px-5"
+                    >
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="border-t border-gray-800">
+
+        <div class="max-w-7xl mx-auto px-6 py-5">
+
+            <div class="text-center text-sm">
+                © 2026 Grand Horizon Hotel. All Rights Reserved.
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

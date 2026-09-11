@@ -1,0 +1,2503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Confirmation | Grand Horizon Hotel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f6f1;
+            color: #1c1c1c;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold {
+            color: #c7a86b;
+        }
+
+        .bg-gold {
+            background: #c7a86b;
+        }
+
+        .booking-paper {
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .08);
+        }
+
+        .section-line {
+            width: 55px;
+            height: 2px;
+            background: #c7a86b;
+        }
+
+        .info-card {
+            border: 1px solid #e8e2d8;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 11px 0;
+            font-size: 14px;
+        }
+
+        .confirmation-icon {
+            animation: scaleIn .6s ease;
+        }
+
+        @keyframes scaleIn {
+
+            0% {
+                transform: scale(.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+        @media print {
+
+            body {
+                background: white !important;
+            }
+
+            header,
+            footer,
+            .no-print,
+            #printButton,
+            #homeButton,
+            #newBookingButton {
+                display: none !important;
+            }
+
+            .booking-paper {
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+            }
+
+            .print-container {
+                padding: 0 !important;
+            }
+
+            .print-section {
+                break-inside: avoid;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="bg-[#111] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+
+            <!-- Logo -->
+
+            <a href="index.html"
+               class="flex items-center gap-3">
+
+                <div class="w-11 h-11 border border-[#c7a86b]
+                            rounded-full flex items-center justify-center">
+
+                    <i class="fa-solid fa-hotel text-[#c7a86b]"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h1 class="font-playfair text-xl md:text-2xl">
+                        Grand Horizon
+                    </h1>
+
+                    <p class="text-[9px] tracking-[4px]
+                              text-gray-400 uppercase">
+                        Luxury Hotel
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- Right -->
+
+            <div class="hidden sm:flex items-center gap-6 text-sm">
+
+                <a href="rooms.html"
+                   class="text-gray-300 hover:text-[#c7a86b] transition">
+
+                    Rooms
+
+                </a>
+
+
+                <a href="contact.html"
+                   class="text-gray-300 hover:text-[#c7a86b] transition">
+
+                    Contact
+
+                </a>
+
+
+                <a href="booking.html"
+                   class="bg-[#c7a86b]
+                          px-5 py-2.5
+                          rounded-md
+                          hover:bg-[#b59455]
+                          transition">
+
+                    Book Again
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PAGE HERO
+========================================================= -->
+
+<section class="bg-[#111] text-white">
+
+    <div class="max-w-5xl mx-auto px-5 py-14 md:py-20 text-center">
+
+
+        <!-- Success Icon -->
+
+        <div class="confirmation-icon
+                    w-20 h-20
+                    mx-auto
+                    rounded-full
+                    bg-[#c7a86b]
+                    flex
+                    items-center
+                    justify-center
+                    mb-7">
+
+            <i class="fa-solid fa-check text-3xl"></i>
+
+        </div>
+
+
+        <p class="uppercase
+                  tracking-[4px]
+                  text-[#c7a86b]
+                  text-xs
+                  mb-3">
+
+            Reservation Confirmed
+
+        </p>
+
+
+        <h2 class="font-playfair
+                   text-4xl
+                   md:text-6xl
+                   mb-5">
+
+            Thank You For Booking
+
+        </h2>
+
+
+        <p class="text-gray-300
+                  max-w-2xl
+                  mx-auto
+                  text-sm
+                  md:text-base
+                  leading-7">
+
+            Your reservation has been successfully received.
+            We look forward to welcoming you to
+            Grand Horizon Hotel.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONFIRMATION CONTENT
+========================================================= -->
+
+<main class="print-container
+             max-w-5xl
+             mx-auto
+             px-5
+             py-10
+             md:py-16">
+
+
+    <!-- =====================================================
+         BOOKING PAPER
+    ====================================================== -->
+
+    <div id="confirmationContent"
+         class="booking-paper
+                bg-white
+                rounded-2xl
+                overflow-hidden">
+
+
+        <!-- =================================================
+             TOP BOOKING HEADER
+        ================================================== -->
+
+        <div class="p-6 md:p-10
+                    border-b
+                    border-gray-200">
+
+
+            <div class="flex
+                        flex-col
+                        md:flex-row
+                        md:items-center
+                        justify-between
+                        gap-6">
+
+
+                <!-- Hotel -->
+
+                <div>
+
+                    <p class="uppercase
+                              tracking-[3px]
+                              text-[#c7a86b]
+                              text-xs
+                              mb-2">
+
+                        Grand Horizon Hotel
+
+                    </p>
+
+
+                    <h3 class="font-playfair
+                               text-3xl
+                               md:text-4xl">
+
+                        Reservation Confirmation
+
+                    </h3>
+
+                </div>
+
+
+                <!-- Booking ID -->
+
+                <div class="md:text-right">
+
+                    <p class="text-xs
+                              uppercase
+                              tracking-[2px]
+                              text-gray-400
+                              mb-1">
+
+                        Booking ID
+
+                    </p>
+
+
+                    <p id="bookingId"
+                       class="font-semibold
+                              text-lg
+                              text-[#c7a86b]">
+
+                        GH-00000000
+
+                    </p>
+
+
+                    <p class="text-xs
+                              text-gray-400
+                              mt-1">
+
+                        <span id="bookingDate">
+                            —
+                        </span>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STATUS
+        ================================================== -->
+
+        <div class="px-6 md:px-10 pt-8">
+
+
+            <div class="flex
+                        items-center
+                        gap-4
+                        bg-green-50
+                        border
+                        border-green-200
+                        rounded-xl
+                        p-5">
+
+
+                <div class="w-12
+                            h-12
+                            rounded-full
+                            bg-green-100
+                            text-green-600
+                            flex
+                            items-center
+                            justify-center
+                            flex-shrink-0">
+
+                    <i class="fa-solid fa-circle-check text-xl"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h4 class="font-semibold
+                               text-green-800">
+
+                        Reservation Confirmed
+
+                    </h4>
+
+
+                    <p class="text-sm
+                              text-green-700
+                              mt-1">
+
+                        Your booking request has been successfully
+                        submitted.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ROOM INFORMATION
+        ================================================== -->
+
+        <div class="p-6 md:p-10 print-section">
+
+
+            <div class="mb-6">
+
+                <p class="uppercase
+                          tracking-[3px]
+                          text-[#c7a86b]
+                          text-xs">
+
+                    Your Stay
+
+                </p>
+
+
+                <h3 class="font-playfair
+                           text-2xl
+                           md:text-3xl
+                           mt-2">
+
+                    Room Details
+
+                </h3>
+
+
+                <div class="section-line mt-4"></div>
+
+            </div>
+
+
+
+            <div class="grid
+                        md:grid-cols-3
+                        gap-6">
+
+
+                <!-- Room Image -->
+
+                <div class="md:col-span-1">
+
+                    <div class="h-56
+                                md:h-full
+                                min-h-[220px]
+                                rounded-xl
+                                overflow-hidden">
+
+                        <img id="roomImage"
+                             src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                             alt="Hotel Room"
+                             class="w-full
+                                    h-full
+                                    object-cover">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Room Details -->
+
+                <div class="md:col-span-2
+                            info-card
+                            rounded-xl
+                            p-6">
+
+
+                    <div class="flex
+                                flex-col
+                                sm:flex-row
+                                sm:items-start
+                                justify-between
+                                gap-4
+                                mb-6">
+
+
+                        <div>
+
+                            <p class="text-xs
+                                      uppercase
+                                      tracking-[2px]
+                                      text-gray-400
+                                      mb-2">
+
+                                Selected Room
+
+                            </p>
+
+
+                            <h4 id="roomName"
+                                class="font-playfair
+                                       text-2xl
+                                       md:text-3xl">
+
+                                Luxury Suite
+
+                            </h4>
+
+                        </div>
+
+
+                        <div class="flex
+                                    items-center
+                                    gap-1
+                                    text-[#c7a86b]">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid
+                                sm:grid-cols-2
+                                gap-y-5
+                                gap-x-8">
+
+
+                        <!-- Check In -->
+
+                        <div class="flex
+                                    items-center
+                                    gap-3">
+
+                            <div class="w-10
+                                        h-10
+                                        rounded-lg
+                                        bg-[#f3eee3]
+                                        flex
+                                        items-center
+                                        justify-center">
+
+                                <i class="fa-solid fa-calendar-check
+                                          text-[#c7a86b]"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-gray-400">
+
+                                    Check-in
+
+                                </p>
+
+
+                                <p id="checkIn"
+                                   class="text-sm
+                                          font-medium
+                                          mt-1">
+
+                                    —
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Check Out -->
+
+                        <div class="flex
+                                    items-center
+                                    gap-3">
+
+                            <div class="w-10
+                                        h-10
+                                        rounded-lg
+                                        bg-[#f3eee3]
+                                        flex
+                                        items-center
+                                        justify-center">
+
+                                <i class="fa-solid fa-calendar-xmark
+                                          text-[#c7a86b]"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-gray-400">
+
+                                    Check-out
+
+                                </p>
+
+
+                                <p id="checkOut"
+                                   class="text-sm
+                                          font-medium
+                                          mt-1">
+
+                                    —
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Nights -->
+
+                        <div class="flex
+                                    items-center
+                                    gap-3">
+
+                            <div class="w-10
+                                        h-10
+                                        rounded-lg
+                                        bg-[#f3eee3]
+                                        flex
+                                        items-center
+                                        justify-center">
+
+                                <i class="fa-solid fa-moon
+                                          text-[#c7a86b]"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-gray-400">
+
+                                    Duration
+
+                                </p>
+
+
+                                <p class="text-sm
+                                          font-medium
+                                          mt-1">
+
+                                    <span id="nights">
+                                        0
+                                    </span>
+
+                                    <span>
+                                        Night(s)
+                                    </span>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Guests -->
+
+                        <div class="flex
+                                    items-center
+                                    gap-3">
+
+                            <div class="w-10
+                                        h-10
+                                        rounded-lg
+                                        bg-[#f3eee3]
+                                        flex
+                                        items-center
+                                        justify-center">
+
+                                <i class="fa-solid fa-users
+                                          text-[#c7a86b]"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-gray-400">
+
+                                    Guests
+
+                                </p>
+
+
+                                <p id="guests"
+                                   class="text-sm
+                                          font-medium
+                                          mt-1">
+
+                                    2 Adults
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GUEST INFORMATION
+        ================================================== -->
+
+        <div class="px-6 md:px-10 pb-10 print-section">
+
+
+            <div class="mb-6">
+
+                <p class="uppercase
+                          tracking-[3px]
+                          text-[#c7a86b]
+                          text-xs">
+
+                    Guest Details
+
+                </p>
+
+
+                <h3 class="font-playfair
+                           text-2xl
+                           md:text-3xl
+                           mt-2">
+
+                    Guest Information
+
+                </h3>
+
+
+                <div class="section-line mt-4"></div>
+
+            </div>
+
+
+
+            <div class="grid
+                        md:grid-cols-2
+                        gap-5">
+
+
+                <!-- Full Name -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        Full Name
+
+                    </p>
+
+
+                    <p id="guestName"
+                       class="font-medium
+                              mt-2">
+
+                        —
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        Email Address
+
+                    </p>
+
+
+                    <p id="guestEmail"
+                       class="font-medium
+                              mt-2
+                              break-all">
+
+                        —
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Phone -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        Phone Number
+
+                    </p>
+
+
+                    <p id="guestPhone"
+                       class="font-medium
+                              mt-2">
+
+                        —
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Country -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        Country
+
+                    </p>
+
+
+                    <p id="guestCountry"
+                       class="font-medium
+                              mt-2">
+
+                        —
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- City -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        City
+
+                    </p>
+
+
+                    <p id="guestCity"
+                       class="font-medium
+                              mt-2">
+
+                        —
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Address -->
+
+                <div class="info-card
+                            rounded-xl
+                            p-5">
+
+                    <p class="text-xs
+                              text-gray-400
+                              uppercase
+                              tracking-[1px]">
+
+                        Address
+
+                    </p>
+
+
+                    <p id="guestAddress"
+                       class="font-medium
+                              mt-2">
+
+                        —
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SPECIAL REQUEST
+        ================================================== -->
+
+        <div id="specialRequestSection"
+             class="px-6 md:px-10 pb-10 print-section">
+
+
+            <div class="bg-[#f8f6f1]
+                        rounded-xl
+                        p-6">
+
+
+                <div class="flex
+                            items-start
+                            gap-4">
+
+
+                    <div class="w-11
+                                h-11
+                                rounded-full
+                                bg-[#c7a86b]
+                                text-white
+                                flex
+                                items-center
+                                justify-center
+                                flex-shrink-0">
+
+                        <i class="fa-solid fa-comment-dots"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs
+                                  uppercase
+                                  tracking-[2px]
+                                  text-gray-400
+                                  mb-2">
+
+                            Special Request
+
+                        </p>
+
+
+                        <p id="specialRequest"
+                           class="text-sm
+                                  text-gray-700
+                                  leading-7">
+
+                            No special request.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PRICE SUMMARY
+        ================================================== -->
+
+        <div class="px-6 md:px-10 pb-10 print-section">
+
+
+            <div class="mb-6">
+
+                <p class="uppercase
+                          tracking-[3px]
+                          text-[#c7a86b]
+                          text-xs">
+
+                    Payment Summary
+
+                </p>
+
+
+                <h3 class="font-playfair
+                           text-2xl
+                           md:text-3xl
+                           mt-2">
+
+                    Reservation Cost
+
+                </h3>
+
+
+                <div class="section-line mt-4"></div>
+
+            </div>
+
+
+
+            <div class="border
+                        border-gray-200
+                        rounded-xl
+                        overflow-hidden">
+
+
+                <!-- Room Charge -->
+
+                <div class="summary-row
+                            px-5
+                            border-b
+                            border-gray-100">
+
+                    <span class="text-gray-500">
+
+                        Room Charge
+
+                    </span>
+
+
+                    <strong id="roomAmount">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Price Per Night -->
+
+                <div class="summary-row
+                            px-5
+                            border-b
+                            border-gray-100">
+
+                    <span class="text-gray-500">
+
+                        Rate per Night
+
+                    </span>
+
+
+                    <span id="pricePerNight">
+
+                        $0.00
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- Service -->
+
+                <div class="summary-row
+                            px-5
+                            border-b
+                            border-gray-100">
+
+                    <span class="text-gray-500">
+
+                        Service Charge
+
+                    </span>
+
+
+                    <span id="serviceFee">
+
+                        $0.00
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- Tax -->
+
+                <div class="summary-row
+                            px-5
+                            border-b
+                            border-gray-100">
+
+                    <span class="text-gray-500">
+
+                        Taxes
+
+                    </span>
+
+
+                    <span id="taxAmount">
+
+                        $0.00
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- Total -->
+
+                <div class="flex
+                            items-center
+                            justify-between
+                            gap-5
+                            px-5
+                            py-6
+                            bg-[#111]
+                            text-white">
+
+
+                    <div>
+
+                        <p class="text-xs
+                                  uppercase
+                                  tracking-[2px]
+                                  text-gray-400">
+
+                            Grand Total
+
+                        </p>
+
+
+                        <p class="text-xs
+                                  text-gray-500
+                                  mt-1">
+
+                            All taxes and charges included
+
+                        </p>
+
+                    </div>
+
+
+                    <p id="grandTotal"
+                       class="font-playfair
+                              text-3xl
+                              md:text-4xl
+                              text-[#c7a86b]">
+
+                        $0.00
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             HOTEL POLICY
+        ================================================== -->
+
+        <div class="px-6 md:px-10 pb-10 print-section">
+
+
+            <div class="grid
+                        md:grid-cols-3
+                        gap-5">
+
+
+                <!-- Check-in Policy -->
+
+                <div class="bg-[#f8f6f1]
+                            rounded-xl
+                            p-5">
+
+                    <div class="w-10
+                                h-10
+                                rounded-lg
+                                bg-white
+                                flex
+                                items-center
+                                justify-center
+                                mb-4">
+
+                        <i class="fa-solid fa-clock
+                                  text-[#c7a86b]"></i>
+
+                    </div>
+
+
+                    <h4 class="font-semibold
+                               mb-2">
+
+                        Check-in
+
+                    </h4>
+
+
+                    <p class="text-sm
+                              text-gray-500
+                              leading-6">
+
+                        Check-in time is from
+                        2:00 PM.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Check-out Policy -->
+
+                <div class="bg-[#f8f6f1]
+                            rounded-xl
+                            p-5">
+
+                    <div class="w-10
+                                h-10
+                                rounded-lg
+                                bg-white
+                                flex
+                                items-center
+                                justify-center
+                                mb-4">
+
+                        <i class="fa-solid fa-clock-rotate-left
+                                  text-[#c7a86b]"></i>
+
+                    </div>
+
+
+                    <h4 class="font-semibold
+                               mb-2">
+
+                        Check-out
+
+                    </h4>
+
+
+                    <p class="text-sm
+                              text-gray-500
+                              leading-6">
+
+                        Check-out time is before
+                        12:00 PM.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Cancellation -->
+
+                <div class="bg-[#f8f6f1]
+                            rounded-xl
+                            p-5">
+
+                    <div class="w-10
+                                h-10
+                                rounded-lg
+                                bg-white
+                                flex
+                                items-center
+                                justify-center
+                                mb-4">
+
+                        <i class="fa-solid fa-shield-halved
+                                  text-[#c7a86b]"></i>
+
+                    </div>
+
+
+                    <h4 class="font-semibold
+                               mb-2">
+
+                        Cancellation
+
+                    </h4>
+
+
+                    <p class="text-sm
+                              text-gray-500
+                              leading-6">
+
+                        Cancellation policies may vary
+                        according to room type.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             THANK YOU MESSAGE
+        ================================================== -->
+
+        <div class="px-6 md:px-10 pb-10">
+
+
+            <div class="text-center
+                        border-t
+                        border-gray-200
+                        pt-10">
+
+
+                <div class="w-14
+                            h-14
+                            mx-auto
+                            rounded-full
+                            border
+                            border-[#c7a86b]
+                            flex
+                            items-center
+                            justify-center
+                            mb-5">
+
+                    <i class="fa-solid fa-hotel
+                              text-[#c7a86b]
+                              text-xl"></i>
+
+                </div>
+
+
+                <h3 class="font-playfair
+                           text-2xl
+                           md:text-3xl">
+
+                    We Look Forward To Welcoming You
+
+                </h3>
+
+
+                <p class="text-sm
+                          text-gray-500
+                          max-w-xl
+                          mx-auto
+                          leading-7
+                          mt-3">
+
+                    Thank you for choosing Grand Horizon Hotel.
+                    If you have any questions about your reservation,
+                    please contact our reservation team.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ACTION BUTTONS
+    ====================================================== -->
+
+    <div class="no-print
+                flex
+                flex-col
+                sm:flex-row
+                justify-center
+                gap-4
+                mt-8">
+
+
+        <!-- Print -->
+
+        <button id="printButton"
+                type="button"
+                class="inline-flex
+                       items-center
+                       justify-center
+                       gap-2
+                       bg-[#111]
+                       text-white
+                       px-7
+                       py-3.5
+                       rounded-lg
+                       text-sm
+                       font-medium
+                       hover:bg-black
+                       transition">
+
+            <i class="fa-solid fa-print"></i>
+
+            Print Confirmation
+
+        </button>
+
+
+
+        <!-- New Booking -->
+
+        <a id="newBookingButton"
+           href="booking.html"
+           class="inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  bg-[#c7a86b]
+                  text-white
+                  px-7
+                  py-3.5
+                  rounded-lg
+                  text-sm
+                  font-medium
+                  hover:bg-[#b59455]
+                  transition">
+
+            <i class="fa-solid fa-calendar-plus"></i>
+
+            Make New Booking
+
+        </a>
+
+
+
+        <!-- Home -->
+
+        <a id="homeButton"
+           href="index.html"
+           class="inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  border
+                  border-gray-300
+                  bg-white
+                  px-7
+                  py-3.5
+                  rounded-lg
+                  text-sm
+                  font-medium
+                  hover:bg-gray-50
+                  transition">
+
+            <i class="fa-solid fa-house"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NO BOOKING MESSAGE
+    ====================================================== -->
+
+    <div id="noBooking"
+         class="hidden
+                bg-white
+                rounded-2xl
+                booking-paper
+                p-10
+                md:p-16
+                text-center">
+
+
+        <div class="w-20
+                    h-20
+                    mx-auto
+                    rounded-full
+                    bg-[#f3eee3]
+                    flex
+                    items-center
+                    justify-center
+                    mb-6">
+
+            <i class="fa-solid fa-calendar-xmark
+                      text-[#c7a86b]
+                      text-3xl"></i>
+
+        </div>
+
+
+        <h2 class="font-playfair
+                   text-3xl
+                   md:text-4xl
+                   mb-4">
+
+            No Booking Found
+
+        </h2>
+
+
+        <p class="text-gray-500
+                  max-w-lg
+                  mx-auto
+                  leading-7
+                  text-sm
+                  mb-7">
+
+            We could not find any recent reservation information
+            in this browser. Please make a new booking to continue.
+
+        </p>
+
+
+        <a href="booking.html"
+           class="inline-flex
+                  items-center
+                  gap-2
+                  bg-[#c7a86b]
+                  text-white
+                  px-7
+                  py-3.5
+                  rounded-lg
+                  text-sm
+                  font-medium
+                  hover:bg-[#b59455]
+                  transition">
+
+            <i class="fa-solid fa-calendar-plus"></i>
+
+            Start New Booking
+
+        </a>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-[#0a0a0a]
+               text-white
+               no-print">
+
+
+    <div class="max-w-7xl
+                mx-auto
+                px-5
+                lg:px-6
+                py-14">
+
+
+        <div class="grid
+                    md:grid-cols-2
+                    lg:grid-cols-4
+                    gap-10">
+
+
+            <!-- About -->
+
+            <div>
+
+                <div class="flex
+                            items-center
+                            gap-3
+                            mb-5">
+
+                    <div class="w-11
+                                h-11
+                                border
+                                border-[#c7a86b]
+                                rounded-full
+                                flex
+                                items-center
+                                justify-center">
+
+                        <i class="fa-solid fa-hotel
+                                  text-[#c7a86b]"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl">
+                            Grand Horizon
+                        </h3>
+
+                        <p class="text-[8px]
+                                  tracking-[3px]
+                                  text-gray-500">
+
+                            LUXURY HOTEL
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-gray-400
+                          text-sm
+                          leading-7">
+
+                    Experience refined luxury,
+                    exceptional hospitality and
+                    unforgettable moments at
+                    Grand Horizon Hotel.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h4 class="font-playfair
+                           text-xl
+                           mb-5">
+
+                    Quick Links
+
+                </h4>
+
+
+                <ul class="space-y-3
+                           text-sm
+                           text-gray-400">
+
+
+                    <li>
+
+                        <a href="index.html"
+                           class="hover:text-[#c7a86b]
+                                  transition">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="rooms.html"
+                           class="hover:text-[#c7a86b]
+                                  transition">
+
+                            Rooms & Suites
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="about.html"
+                           class="hover:text-[#c7a86b]
+                                  transition">
+
+                            About Us
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="services.html"
+                           class="hover:text-[#c7a86b]
+                                  transition">
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="contact.html"
+                           class="hover:text-[#c7a86b]
+                                  transition">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4 class="font-playfair
+                           text-xl
+                           mb-5">
+
+                    Contact
+
+                </h4>
+
+
+                <ul class="space-y-4
+                           text-sm
+                           text-gray-400">
+
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-location-dot
+                                  text-[#c7a86b]
+                                  mt-1"></i>
+
+                        <span>
+
+                            123 Luxury Avenue,<br>
+                            New York, NY 10001
+
+                        </span>
+
+                    </li>
+
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-phone
+                                  text-[#c7a86b]
+                                  mt-1"></i>
+
+                        <span>
+
+                            +880 1924252627
+
+                        </span>
+
+                    </li>
+
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-envelope
+                                  text-[#c7a86b]
+                                  mt-1"></i>
+
+                        <span>
+
+                            reservations@grandhorizon.com
+
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Social -->
+
+            <div>
+
+                <h4 class="font-playfair
+                           text-xl
+                           mb-5">
+
+                    Follow Us
+
+                </h4>
+
+
+                <p class="text-gray-400
+                          text-sm
+                          leading-6
+                          mb-5">
+
+                    Stay connected with Grand Horizon
+                    Hotel for the latest offers and updates.
+
+                </p>
+
+
+                <div class="flex gap-3">
+
+
+                    <a href="#"
+                       class="w-10
+                              h-10
+                              rounded-full
+                              border
+                              border-gray-700
+                              flex
+                              items-center
+                              justify-center
+                              hover:border-[#c7a86b]
+                              hover:text-[#c7a86b]
+                              transition">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="w-10
+                              h-10
+                              rounded-full
+                              border
+                              border-gray-700
+                              flex
+                              items-center
+                              justify-center
+                              hover:border-[#c7a86b]
+                              hover:text-[#c7a86b]
+                              transition">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="w-10
+                              h-10
+                              rounded-full
+                              border
+                              border-gray-700
+                              flex
+                              items-center
+                              justify-center
+                              hover:border-[#c7a86b]
+                              hover:text-[#c7a86b]
+                              transition">
+
+                        <i class="fab fa-x-twitter"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="w-10
+                              h-10
+                              rounded-full
+                              border
+                              border-gray-700
+                              flex
+                              items-center
+                              justify-center
+                              hover:border-[#c7a86b]
+                              hover:text-[#c7a86b]
+                              transition">
+
+                        <i class="fab fa-youtube"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Copyright -->
+
+    <div class="border-t
+                border-gray-800">
+
+
+        <div class="max-w-7xl
+                    mx-auto
+                    px-5
+                    lg:px-6
+                    py-5">
+
+
+            <div class="flex
+                        flex-col
+                        md:flex-row
+                        justify-between
+                        gap-3
+                        text-xs
+                        text-gray-500">
+
+
+                <p>
+
+                    © 2026 Grand Horizon Hotel.
+                    All Rights Reserved.
+
+                </p>
+
+
+                <div class="flex gap-5">
+
+                    <a href="#"
+                       class="hover:text-white">
+
+                        Privacy Policy
+
+                    </a>
+
+
+                    <a href="#"
+                       class="hover:text-white">
+
+                        Terms & Conditions
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* ========================================================
+       GET BOOKING DATA
+    ======================================================== */
+
+    const savedBooking =
+        localStorage.getItem("hotelBooking");
+
+
+    const confirmationContent =
+        document.getElementById("confirmationContent");
+
+
+    const noBooking =
+        document.getElementById("noBooking");
+
+
+    const actionButtons =
+        document.querySelector(".no-print");
+
+
+    /* ========================================================
+       NO BOOKING
+    ======================================================== */
+
+    if (!savedBooking) {
+
+        confirmationContent.classList.add("hidden");
+
+        noBooking.classList.remove("hidden");
+
+        if (actionButtons) {
+            actionButtons.classList.add("hidden");
+        }
+
+        return;
+
+    }
+
+
+    /* ========================================================
+       PARSE DATA
+    ======================================================== */
+
+    let booking;
+
+    try {
+
+        booking =
+            JSON.parse(savedBooking);
+
+    } catch (error) {
+
+        confirmationContent.classList.add("hidden");
+
+        noBooking.classList.remove("hidden");
+
+        if (actionButtons) {
+            actionButtons.classList.add("hidden");
+        }
+
+        return;
+
+    }
+
+
+    /* ========================================================
+       FORMAT DATE
+    ======================================================== */
+
+    function formatDate(dateString) {
+
+        if (!dateString) {
+            return "—";
+        }
+
+
+        const date =
+            new Date(dateString + "T00:00:00");
+
+
+        if (isNaN(date.getTime())) {
+            return "—";
+        }
+
+
+        return date.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "short",
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* ========================================================
+       FORMAT CURRENCY
+    ======================================================== */
+
+    function currency(value) {
+
+        const number =
+            Number(value) || 0;
+
+
+        return "$" +
+            number.toFixed(2);
+
+    }
+
+
+    /* ========================================================
+       SAFE TEXT
+    ======================================================== */
+
+    function displayValue(value) {
+
+        if (
+            value === undefined ||
+            value === null ||
+            value === ""
+        ) {
+
+            return "Not provided";
+
+        }
+
+        return value;
+
+    }
+
+
+    /* ========================================================
+       BOOKING ID
+    ======================================================== */
+
+    document.getElementById("bookingId")
+        .textContent =
+        displayValue(
+            booking.bookingId
+        );
+
+
+    /* ========================================================
+       BOOKING CREATED DATE
+    ======================================================== */
+
+    if (booking.createdAt) {
+
+        const createdDate =
+            new Date(booking.createdAt);
+
+
+        if (!isNaN(createdDate.getTime())) {
+
+            document.getElementById("bookingDate")
+                .textContent =
+                "Booked on " +
+                createdDate.toLocaleDateString(
+                    "en-US",
+                    {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    }
+                );
+
+        }
+
+    }
+
+
+    /* ========================================================
+       ROOM
+    ======================================================== */
+
+    document.getElementById("roomName")
+        .textContent =
+        displayValue(
+            booking.roomName
+        );
+
+
+    /* ========================================================
+       ROOM IMAGE
+    ======================================================== */
+
+    const roomImage =
+        document.getElementById("roomImage");
+
+
+    const roomImages = {
+
+        "luxury-suite":
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85",
+
+        "deluxe-room":
+            "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85",
+
+        "executive-room":
+            "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85",
+
+        "presidential-suite":
+            "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=85"
+
+    };
+
+
+    if (booking.room &&
+        roomImages[booking.room]) {
+
+        roomImage.src =
+            roomImages[booking.room];
+
+    }
+
+
+    /* ========================================================
+       DATES
+    ======================================================== */
+
+    document.getElementById("checkIn")
+        .textContent =
+        formatDate(
+            booking.checkIn
+        );
+
+
+    document.getElementById("checkOut")
+        .textContent =
+        formatDate(
+            booking.checkOut
+        );
+
+
+    /* ========================================================
+       NIGHTS
+    ======================================================== */
+
+    document.getElementById("nights")
+        .textContent =
+        booking.nights || 0;
+
+
+    /* ========================================================
+       GUESTS
+    ======================================================== */
+
+    const adults =
+        Number(booking.adults) || 0;
+
+
+    const children =
+        Number(booking.children) || 0;
+
+
+    let guestText =
+        adults +
+        (
+            adults === 1
+                ? " Adult"
+                : " Adults"
+        );
+
+
+    if (children > 0) {
+
+        guestText +=
+            " · " +
+            children +
+            (
+                children === 1
+                    ? " Child"
+                    : " Children"
+            );
+
+    }
+
+
+    document.getElementById("guests")
+        .textContent =
+        guestText;
+
+
+    /* ========================================================
+       GUEST NAME
+    ======================================================== */
+
+    let fullName =
+        booking.fullName;
+
+
+    if (!fullName) {
+
+        fullName =
+            (
+                displayValue(booking.firstName) +
+                " " +
+                displayValue(booking.lastName)
+            );
+
+    }
+
+
+    document.getElementById("guestName")
+        .textContent =
+        fullName;
+
+
+    /* ========================================================
+       EMAIL
+    ======================================================== */
+
+    document.getElementById("guestEmail")
+        .textContent =
+        displayValue(
+            booking.email
+        );
+
+
+    /* ========================================================
+       PHONE
+    ======================================================== */
+
+    document.getElementById("guestPhone")
+        .textContent =
+        displayValue(
+            booking.phone
+        );
+
+
+    /* ========================================================
+       COUNTRY
+    ======================================================== */
+
+    document.getElementById("guestCountry")
+        .textContent =
+        displayValue(
+            booking.country
+        );
+
+
+    /* ========================================================
+       CITY
+    ======================================================== */
+
+    document.getElementById("guestCity")
+        .textContent =
+        displayValue(
+            booking.city
+        );
+
+
+    /* ========================================================
+       ADDRESS
+    ======================================================== */
+
+    document.getElementById("guestAddress")
+        .textContent =
+        displayValue(
+            booking.address
+        );
+
+
+    /* ========================================================
+       SPECIAL REQUEST
+    ======================================================== */
+
+    const specialRequest =
+        booking.specialRequest;
+
+
+    const specialRequestText =
+        document.getElementById(
+            "specialRequest"
+        );
+
+
+    if (
+        specialRequest &&
+        specialRequest.trim() !== ""
+    ) {
+
+        specialRequestText.textContent =
+            specialRequest;
+
+    } else {
+
+        specialRequestText.textContent =
+            "No special request.";
+
+    }
+
+
+    /* ========================================================
+       PRICE
+    ======================================================== */
+
+    document.getElementById("roomAmount")
+        .textContent =
+        currency(
+            booking.roomAmount
+        );
+
+
+    document.getElementById("pricePerNight")
+        .textContent =
+        currency(
+            booking.pricePerNight
+        ) +
+        " / night";
+
+
+    document.getElementById("serviceFee")
+        .textContent =
+        currency(
+            booking.serviceFee
+        );
+
+
+    document.getElementById("taxAmount")
+        .textContent =
+        currency(
+            booking.tax
+        );
+
+
+    document.getElementById("grandTotal")
+        .textContent =
+        currency(
+            booking.total
+        );
+
+
+    /* ========================================================
+       PRINT
+    ======================================================== */
+
+    document.getElementById("printButton")
+        .addEventListener(
+            "click",
+            function () {
+
+                window.print();
+
+            }
+        );
+
+
+    /* ========================================================
+       IMAGE FALLBACK
+    ======================================================== */
+
+    roomImage.addEventListener(
+        "error",
+        function () {
+
+            this.src =
+                "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=85";
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>

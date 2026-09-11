@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking | Grand Horizon Hotel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f6f1;
+            color: #1c1c1c;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold {
+            color: #c7a86b;
+        }
+
+        .bg-gold {
+            background: #c7a86b;
+        }
+
+        .border-gold {
+            border-color: #c7a86b;
+        }
+
+        .hover-gold:hover {
+            color: #c7a86b;
+        }
+
+        .input-field {
+            width: 100%;
+            border: 1px solid #ddd6c8;
+            background: #fff;
+            padding: 13px 15px;
+            border-radius: 8px;
+            outline: none;
+            transition: all .3s ease;
+            font-size: 14px;
+        }
+
+        .input-field:focus {
+            border-color: #c7a86b;
+            box-shadow: 0 0 0 3px rgba(199, 168, 107, .12);
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9a8a6d;
+            z-index: 2;
+        }
+
+        .input-icon .input-field {
+            padding-left: 45px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 2px;
+            background: #c7a86b;
+            margin-top: 12px;
+        }
+
+        .booking-card {
+            box-shadow: 0 20px 60px rgba(0,0,0,.08);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 9px 0;
+            font-size: 14px;
+        }
+
+        .step-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #c7a86b;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-line {
+            height: 1px;
+            background: #ddd6c8;
+            flex: 1;
+            margin: 0 12px;
+        }
+
+        .checkbox-custom {
+            width: 17px;
+            height: 17px;
+            accent-color: #c7a86b;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,.65),
+                rgba(0,0,0,.45)
+            );
+        }
+
+        @media(max-width: 768px) {
+
+            .step-line {
+                margin: 0 6px;
+            }
+
+            .step-circle {
+                width: 36px;
+                height: 36px;
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="hidden md:block bg-[#111] text-white text-xs">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex justify-between items-center py-3">
+
+            <div class="flex items-center gap-6">
+
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone gold"></i>
+                    +880 1924252627
+                </span>
+
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope gold"></i>
+                    reservations@grandhorizon.com
+                </span>
+
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <a href="#" class="hover-gold transition">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="hover-gold transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="hover-gold transition">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <a href="#" class="hover-gold transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="bg-[#111] text-white sticky top-0 z-50 shadow-lg">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center gap-3">
+
+                <div class="w-11 h-11 border border-[#c7a86b] rounded-full flex items-center justify-center">
+
+                    <i class="fa-solid fa-hotel text-[#c7a86b]"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="font-playfair text-xl md:text-2xl">
+                        Grand Horizon
+                    </h1>
+
+                    <p class="text-[9px] tracking-[4px] text-gray-400 uppercase">
+                        Luxury Hotel
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm">
+
+                <a href="index.html"
+                   class="hover:text-[#c7a86b] transition">
+                    Home
+                </a>
+
+                <a href="rooms.html"
+                   class="hover:text-[#c7a86b] transition">
+                    Rooms
+                </a>
+
+                <a href="about.html"
+                   class="hover:text-[#c7a86b] transition">
+                    About
+                </a>
+
+                <a href="services.html"
+                   class="hover:text-[#c7a86b] transition">
+                    Services
+                </a>
+
+                <a href="contact.html"
+                   class="hover:text-[#c7a86b] transition">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Desktop Button -->
+
+            <a href="booking.html"
+               class="hidden lg:inline-flex items-center gap-2 bg-[#c7a86b] text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-[#b59455] transition">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Book Now
+
+            </a>
+
+
+            <!-- Mobile Menu -->
+
+            <button
+                id="menuBtn"
+                class="lg:hidden text-xl"
+                type="button"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+
+        <div id="mobileMenu"
+             class="hidden lg:hidden pb-5">
+
+            <div class="flex flex-col gap-4 text-sm border-t border-gray-800 pt-5">
+
+                <a href="index.html"
+                   class="hover:text-[#c7a86b]">
+                    Home
+                </a>
+
+                <a href="rooms.html"
+                   class="hover:text-[#c7a86b]">
+                    Rooms
+                </a>
+
+                <a href="about.html"
+                   class="hover:text-[#c7a86b]">
+                    About
+                </a>
+
+                <a href="services.html"
+                   class="hover:text-[#c7a86b]">
+                    Services
+                </a>
+
+                <a href="contact.html"
+                   class="hover:text-[#c7a86b]">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     PAGE HERO
+========================================================= -->
+
+<section
+    class="relative h-[300px] md:h-[360px] bg-cover bg-center"
+    style="
+        background-image:
+        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85');
+    "
+>
+
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <div class="relative z-10 h-full flex items-center justify-center text-center text-white px-5">
+
+        <div>
+
+            <p class="text-[#c7a86b] uppercase tracking-[4px] text-xs md:text-sm mb-4">
+                Grand Horizon Hotel
+            </p>
+
+            <h2 class="font-playfair text-4xl md:text-6xl mb-4">
+                Complete Your Reservation
+            </h2>
+
+            <p class="text-gray-200 max-w-xl mx-auto text-sm md:text-base">
+                Reserve your luxury stay and experience exceptional
+                comfort, elegance and hospitality.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKING STEPS
+========================================================= -->
+
+<section class="bg-white border-b border-gray-200">
+
+    <div class="max-w-5xl mx-auto px-5 py-8">
+
+        <div class="flex items-center justify-center">
+
+            <div class="flex items-center">
+
+                <div class="step-circle">
+                    1
+                </div>
+
+                <div class="hidden sm:block ml-3 text-sm font-medium">
+                    Booking Details
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="flex items-center">
+
+                <div class="step-circle">
+                    2
+                </div>
+
+                <div class="hidden sm:block ml-3 text-sm font-medium">
+                    Guest Information
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="flex items-center">
+
+                <div class="step-circle">
+                    3
+                </div>
+
+                <div class="hidden sm:block ml-3 text-sm font-medium">
+                    Confirmation
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKING CONTENT
+========================================================= -->
+
+<section class="py-14 md:py-20">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-6">
+
+        <div class="grid lg:grid-cols-3 gap-8">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <div class="lg:col-span-2 space-y-8">
+
+
+                <!-- Booking Details -->
+
+                <div class="bg-white booking-card rounded-xl p-6 md:p-8">
+
+                    <div class="mb-7">
+
+                        <p class="uppercase tracking-[3px] text-[#c7a86b] text-xs">
+                            Step 01
+                        </p>
+
+                        <h3 class="font-playfair text-3xl mt-2 section-title">
+                            Booking Details
+                        </h3>
+
+                    </div>
+
+
+                    <!-- Room -->
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Select Room
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-bed"></i>
+
+                                <select
+                                    id="room"
+                                    class="input-field appearance-none"
+                                >
+
+                                    <option value="luxury-suite"
+                                            data-price="220"
+                                            data-name="Luxury Suite">
+                                        Luxury Suite — $220/night
+                                    </option>
+
+                                    <option value="deluxe-room"
+                                            data-price="160"
+                                            data-name="Deluxe Room">
+                                        Deluxe Room — $160/night
+                                    </option>
+
+                                    <option value="executive-room"
+                                            data-price="190"
+                                            data-name="Executive Room">
+                                        Executive Room — $190/night
+                                    </option>
+
+                                    <option value="presidential-suite"
+                                            data-price="450"
+                                            data-name="Presidential Suite">
+                                        Presidential Suite — $450/night
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Adults -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Adults
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <select
+                                    id="adults"
+                                    class="input-field"
+                                >
+
+                                    <option value="1">
+                                        1 Adult
+                                    </option>
+
+                                    <option value="2" selected>
+                                        2 Adults
+                                    </option>
+
+                                    <option value="3">
+                                        3 Adults
+                                    </option>
+
+                                    <option value="4">
+                                        4 Adults
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Children -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Children
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-child"></i>
+
+                                <select
+                                    id="children"
+                                    class="input-field"
+                                >
+
+                                    <option value="0">
+                                        0 Children
+                                    </option>
+
+                                    <option value="1">
+                                        1 Child
+                                    </option>
+
+                                    <option value="2">
+                                        2 Children
+                                    </option>
+
+                                    <option value="3">
+                                        3 Children
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Check In -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Check-in
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                <input
+                                    type="date"
+                                    id="checkIn"
+                                    class="input-field"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Check Out -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Check-out
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                <input
+                                    type="date"
+                                    id="checkOut"
+                                    class="input-field"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Guest Information -->
+
+                <div class="bg-white booking-card rounded-xl p-6 md:p-8">
+
+                    <div class="mb-7">
+
+                        <p class="uppercase tracking-[3px] text-[#c7a86b] text-xs">
+                            Step 02
+                        </p>
+
+                        <h3 class="font-playfair text-3xl mt-2 section-title">
+                            Guest Information
+                        </h3>
+
+                    </div>
+
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+
+                        <!-- First Name -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                First Name *
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    class="input-field"
+                                    placeholder="Enter first name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Last Name -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Last Name *
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    class="input-field"
+                                    placeholder="Enter last name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Email Address *
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="input-field"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Phone Number *
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    class="input-field"
+                                    placeholder="+880 1924252627"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Country -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                Country
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-globe"></i>
+
+                                <select
+                                    id="country"
+                                    class="input-field"
+                                >
+
+                                    <option value="">
+                                        Select Country
+                                    </option>
+
+                                    <option>
+                                        Bangladesh
+                                    </option>
+
+                                    <option>
+                                        United States
+                                    </option>
+
+                                    <option>
+                                        United Kingdom
+                                    </option>
+
+                                    <option>
+                                        Canada
+                                    </option>
+
+                                    <option>
+                                        Australia
+                                    </option>
+
+                                    <option>
+                                        Germany
+                                    </option>
+
+                                    <option>
+                                        France
+                                    </option>
+
+                                    <option>
+                                        Italy
+                                    </option>
+
+                                    <option>
+                                        Spain
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- City -->
+
+                        <div>
+
+                            <label class="block text-sm font-medium mb-2">
+                                City
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    class="input-field"
+                                    placeholder="Your city"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Address -->
+
+                        <div class="md:col-span-2">
+
+                            <label class="block text-sm font-medium mb-2">
+                                Address
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fa-solid fa-house"></i>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    class="input-field"
+                                    placeholder="Your address"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Special Request -->
+
+                        <div class="md:col-span-2">
+
+                            <label class="block text-sm font-medium mb-2">
+                                Special Request
+                            </label>
+
+                            <textarea
+                                id="specialRequest"
+                                rows="5"
+                                class="input-field resize-none"
+                                placeholder="Let us know if you have any special requests..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment Notice -->
+
+                <div class="bg-[#f3eee3] border border-[#e4d8c2] rounded-xl p-6">
+
+                    <div class="flex gap-4">
+
+                        <div class="w-11 h-11 rounded-full bg-[#c7a86b] text-white flex items-center justify-center flex-shrink-0">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-semibold mb-1">
+                                Secure Reservation
+                            </h4>
+
+                            <p class="text-sm text-gray-600 leading-6">
+                                Your reservation information is securely
+                                processed. No payment will be charged at
+                                this stage.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="flex items-start gap-3">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        class="checkbox-custom mt-1"
+                    >
+
+                    <label
+                        for="terms"
+                        class="text-sm text-gray-600 leading-6"
+                    >
+                        I agree to the hotel's
+                        <a href="#" class="text-[#a9894e] hover:underline">
+                            terms and conditions
+                        </a>
+                        and
+                        <a href="#" class="text-[#a9894e] hover:underline">
+                            cancellation policy
+                        </a>.
+                    </label>
+
+                </div>
+
+
+                <!-- Mobile Confirm Button -->
+
+                <button
+                    id="confirmBookingMobile"
+                    type="button"
+                    class="lg:hidden w-full bg-[#c7a86b] hover:bg-[#b59455] text-white py-4 rounded-lg font-medium transition"
+                >
+
+                    <i class="fa-solid fa-calendar-check mr-2"></i>
+
+                    Confirm Reservation
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE SUMMARY
+            ================================================== -->
+
+            <div>
+
+                <div class="bg-white booking-card rounded-xl overflow-hidden sticky top-28">
+
+
+                    <!-- Room Image -->
+
+                    <div class="relative h-56">
+
+                        <img
+                            id="summaryImage"
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                            alt="Luxury Suite"
+                            class="w-full h-full object-cover"
+                        >
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+                        <div class="absolute bottom-5 left-5 text-white">
+
+                            <p class="text-xs uppercase tracking-[3px] text-[#e5c986]">
+                                Your Selection
+                            </p>
+
+                            <h3
+                                id="summaryRoom"
+                                class="font-playfair text-2xl mt-1"
+                            >
+                                Luxury Suite
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Summary -->
+
+                    <div class="p-6">
+
+                        <div class="flex items-center justify-between mb-5">
+
+                            <div>
+
+                                <div class="flex items-center gap-1 text-[#c7a86b] text-sm">
+
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+
+                                </div>
+
+                                <p class="text-xs text-gray-500 mt-1">
+                                    4.9 · 126 reviews
+                                </p>
+
+                            </div>
+
+                            <div class="text-right">
+
+                                <span
+                                    id="summaryPrice"
+                                    class="font-playfair text-2xl font-semibold"
+                                >
+                                    $220
+                                </span>
+
+                                <span class="text-xs text-gray-500">
+                                    /night
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="border-t border-gray-200 pt-4">
+
+
+                            <!-- Dates -->
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Check-in
+                                </span>
+
+                                <strong id="summaryCheckIn">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Check-out
+                                </span>
+
+                                <strong id="summaryCheckOut">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Guests
+                                </span>
+
+                                <strong id="summaryGuests">
+                                    2 Adults
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Nights
+                                </span>
+
+                                <strong id="summaryNights">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Price -->
+
+                        <div class="border-t border-gray-200 mt-4 pt-4">
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Room
+                                </span>
+
+                                <span id="roomTotal">
+                                    $0
+                                </span>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Service charge
+                                </span>
+
+                                <span id="serviceFee">
+                                    $0
+                                </span>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span class="text-gray-500">
+                                    Taxes
+                                </span>
+
+                                <span id="taxAmount">
+                                    $0
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Total -->
+
+                        <div class="border-t border-gray-300 mt-4 pt-5">
+
+                            <div class="flex justify-between items-end">
+
+                                <div>
+
+                                    <p class="text-xs uppercase tracking-[2px] text-gray-500">
+                                        Total
+                                    </p>
+
+                                    <p class="font-playfair text-3xl mt-1">
+                                        <span id="grandTotal">
+                                            $0
+                                        </span>
+                                    </p>
+
+                                </div>
+
+                                <div class="text-xs text-gray-500">
+                                    USD
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Confirm -->
+
+                        <button
+                            id="confirmBooking"
+                            type="button"
+                            class="hidden lg:block w-full bg-[#c7a86b] hover:bg-[#b59455] text-white py-4 rounded-lg font-medium transition mt-6"
+                        >
+
+                            <i class="fa-solid fa-calendar-check mr-2"></i>
+
+                            Confirm Reservation
+
+                        </button>
+
+
+                        <p class="text-center text-xs text-gray-400 mt-4">
+
+                            <i class="fa-solid fa-lock mr-1"></i>
+
+                            Secure reservation · No payment required
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY BOOK DIRECT
+========================================================= -->
+
+<section class="py-16 bg-[#111] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-6">
+
+        <div class="text-center mb-12">
+
+            <p class="text-[#c7a86b] uppercase tracking-[4px] text-xs">
+                Direct Booking Benefits
+            </p>
+
+            <h2 class="font-playfair text-3xl md:text-4xl mt-3">
+                Why Book Direct?
+            </h2>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+
+            <div class="text-center">
+
+                <div class="w-14 h-14 border border-[#c7a86b] rounded-full mx-auto flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-tags text-[#c7a86b]"></i>
+
+                </div>
+
+                <h4 class="font-semibold mb-2">
+                    Best Available Rate
+                </h4>
+
+                <p class="text-gray-400 text-sm leading-6">
+                    Get our best available room rates when booking directly.
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="w-14 h-14 border border-[#c7a86b] rounded-full mx-auto flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-gift text-[#c7a86b]"></i>
+
+                </div>
+
+                <h4 class="font-semibold mb-2">
+                    Exclusive Benefits
+                </h4>
+
+                <p class="text-gray-400 text-sm leading-6">
+                    Enjoy special offers and exclusive direct booking benefits.
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="w-14 h-14 border border-[#c7a86b] rounded-full mx-auto flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-headset text-[#c7a86b]"></i>
+
+                </div>
+
+                <h4 class="font-semibold mb-2">
+                    Personal Assistance
+                </h4>
+
+                <p class="text-gray-400 text-sm leading-6">
+                    Our reservation team is available to assist you anytime.
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="w-14 h-14 border border-[#c7a86b] rounded-full mx-auto flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-shield-halved text-[#c7a86b]"></i>
+
+                </div>
+
+                <h4 class="font-semibold mb-2">
+                    Secure Booking
+                </h4>
+
+                <p class="text-gray-400 text-sm leading-6">
+                    Your reservation information is protected and secure.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-[#0a0a0a] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-6 py-14">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+
+            <!-- About -->
+
+            <div>
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <div class="w-11 h-11 border border-[#c7a86b] rounded-full flex items-center justify-center">
+
+                        <i class="fa-solid fa-hotel text-[#c7a86b]"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl">
+                            Grand Horizon
+                        </h3>
+
+                        <p class="text-[8px] tracking-[3px] text-gray-500">
+                            LUXURY HOTEL
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p class="text-gray-400 text-sm leading-7">
+                    Experience refined luxury, exceptional hospitality
+                    and unforgettable moments at Grand Horizon Hotel.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h4 class="font-playfair text-xl mb-5">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3 text-sm text-gray-400">
+
+                    <li>
+                        <a href="index.html"
+                           class="hover:text-[#c7a86b] transition">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="rooms.html"
+                           class="hover:text-[#c7a86b] transition">
+                            Rooms & Suites
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html"
+                           class="hover:text-[#c7a86b] transition">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html"
+                           class="hover:text-[#c7a86b] transition">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"
+                           class="hover:text-[#c7a86b] transition">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4 class="font-playfair text-xl mb-5">
+                    Contact
+                </h4>
+
+                <ul class="space-y-4 text-sm text-gray-400">
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-location-dot text-[#c7a86b] mt-1"></i>
+
+                        <span>
+                            123 Luxury Avenue,<br>
+                            New York, NY 10001
+                        </span>
+
+                    </li>
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-phone text-[#c7a86b] mt-1"></i>
+
+                        <span>
+                            +880 1924252627
+                        </span>
+
+                    </li>
+
+                    <li class="flex gap-3">
+
+                        <i class="fa-solid fa-envelope text-[#c7a86b] mt-1"></i>
+
+                        <span>
+                            reservations@grandhorizon.com
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Newsletter -->
+
+            <div>
+
+                <h4 class="font-playfair text-xl mb-5">
+                    Stay Connected
+                </h4>
+
+                <p class="text-gray-400 text-sm leading-6 mb-5">
+                    Subscribe to receive our latest offers and hotel news.
+                </p>
+
+                <div class="flex">
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        class="w-full bg-[#171717] border border-gray-800 px-4 py-3 text-sm outline-none focus:border-[#c7a86b]"
+                    >
+
+                    <button
+                        class="bg-[#c7a86b] px-5"
+                    >
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Copyright -->
+
+    <div class="border-t border-gray-800">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-6 py-5">
+
+            <div class="flex flex-col md:flex-row justify-between gap-3 text-xs text-gray-500">
+
+                <p>
+                    © 2026 Grand Horizon Hotel. All Rights Reserved.
+                </p>
+
+                <div class="flex gap-5">
+
+                    <a href="#" class="hover:text-white">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="hover:text-white">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SUCCESS MODAL
+========================================================= -->
+
+<div
+    id="successModal"
+    class="fixed inset-0 bg-black/70 z-[100] hidden items-center justify-center px-5"
+>
+
+    <div class="bg-white rounded-2xl max-w-lg w-full p-8 md:p-10 text-center">
+
+        <div class="w-20 h-20 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6">
+
+            <i class="fa-solid fa-check text-3xl"></i>
+
+        </div>
+
+
+        <p class="text-[#c7a86b] uppercase tracking-[3px] text-xs mb-2">
+            Reservation Confirmed
+        </p>
+
+
+        <h2 class="font-playfair text-3xl md:text-4xl mb-4">
+            Thank You!
+        </h2>
+
+
+        <p class="text-gray-600 text-sm leading-7 mb-6">
+
+            Your reservation request has been successfully submitted.
+            Our reservation team will contact you shortly.
+
+        </p>
+
+
+        <div class="bg-[#f8f6f1] rounded-lg p-5 text-left mb-6">
+
+            <div class="flex justify-between py-2 text-sm">
+
+                <span class="text-gray-500">
+                    Booking ID
+                </span>
+
+                <strong id="bookingId">
+                    GH-000000
+                </strong>
+
+            </div>
+
+
+            <div class="flex justify-between py-2 text-sm">
+
+                <span class="text-gray-500">
+                    Guest
+                </span>
+
+                <strong id="confirmedGuest">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="flex justify-between py-2 text-sm">
+
+                <span class="text-gray-500">
+                    Room
+                </span>
+
+                <strong id="confirmedRoom">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="flex justify-between py-2 text-sm">
+
+                <span class="text-gray-500">
+                    Total
+                </span>
+
+                <strong id="confirmedTotal">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="flex flex-col sm:flex-row gap-3">
+
+            <a
+                href="index.html"
+                class="flex-1 bg-[#111] text-white py-3 rounded-lg text-sm font-medium hover:bg-black transition"
+            >
+                Back to Home
+            </a>
+
+            <button
+                id="closeModal"
+                type="button"
+                class="flex-1 border border-gray-300 py-3 rounded-lg text-sm font-medium hover:bg-gray-50 transition"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* ========================================================
+       MOBILE MENU
+    ======================================================== */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener("click", function () {
+
+            mobileMenu.classList.toggle("hidden");
+
+            const icon = menuBtn.querySelector("i");
+
+            if (mobileMenu.classList.contains("hidden")) {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            } else {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            }
+
+        });
+
+    }
+
+
+    /* ========================================================
+       ELEMENTS
+    ======================================================== */
+
+    const room = document.getElementById("room");
+    const adults = document.getElementById("adults");
+    const children = document.getElementById("children");
+
+    const checkIn = document.getElementById("checkIn");
+    const checkOut = document.getElementById("checkOut");
+
+    const summaryRoom = document.getElementById("summaryRoom");
+    const summaryPrice = document.getElementById("summaryPrice");
+
+    const summaryCheckIn = document.getElementById("summaryCheckIn");
+    const summaryCheckOut = document.getElementById("summaryCheckOut");
+
+    const summaryGuests = document.getElementById("summaryGuests");
+    const summaryNights = document.getElementById("summaryNights");
+
+    const roomTotal = document.getElementById("roomTotal");
+    const serviceFee = document.getElementById("serviceFee");
+    const taxAmount = document.getElementById("taxAmount");
+    const grandTotal = document.getElementById("grandTotal");
+
+
+    /* ========================================================
+       DATE HELPERS
+    ======================================================== */
+
+    function formatDate(dateString) {
+
+        if (!dateString) {
+            return "—";
+        }
+
+        const date = new Date(dateString + "T00:00:00");
+
+        return date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        });
+
+    }
+
+
+    function getToday() {
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+
+        const month = String(
+            today.getMonth() + 1
+        ).padStart(2, "0");
+
+        const day = String(
+            today.getDate()
+        ).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+
+    }
+
+
+    /* ========================================================
+       MIN DATE
+    ======================================================== */
+
+    const today = getToday();
+
+    checkIn.min = today;
+    checkOut.min = today;
+
+
+    /* ========================================================
+       LOAD PREVIOUS BOOKING DATA
+    ======================================================== */
+
+    const savedBooking = localStorage.getItem("hotelBooking");
+
+    if (savedBooking) {
+
+        try {
+
+            const bookingData = JSON.parse(savedBooking);
+
+            if (bookingData.room) {
+
+                const roomOption = Array.from(room.options)
+                    .find(option => option.value === bookingData.room);
+
+                if (roomOption) {
+
+                    room.value = bookingData.room;
+
+                }
+
+            }
+
+            if (bookingData.checkIn) {
+
+                checkIn.value = bookingData.checkIn;
+
+            }
+
+            if (bookingData.checkOut) {
+
+                checkOut.value = bookingData.checkOut;
+
+            }
+
+            if (bookingData.adults) {
+
+                adults.value = bookingData.adults;
+
+            }
+
+            if (bookingData.children !== undefined) {
+
+                children.value = bookingData.children;
+
+            }
+
+        } catch (error) {
+
+            console.log("Booking data could not be loaded.");
+
+        }
+
+    }
+
+
+    /* ========================================================
+       ROOM FROM URL
+       Example:
+       booking.html?room=suite
+    ======================================================== */
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const roomParam = urlParams.get("room");
+
+    if (roomParam) {
+
+        if (roomParam === "suite") {
+
+            room.value = "luxury-suite";
+
+        }
+
+        if (roomParam === "deluxe") {
+
+            room.value = "deluxe-room";
+
+        }
+
+        if (roomParam === "executive") {
+
+            room.value = "executive-room";
+
+        }
+
+        if (roomParam === "presidential") {
+
+            room.value = "presidential-suite";
+
+        }
+
+    }
+
+
+    /* ========================================================
+       CHECKOUT MIN
+    ======================================================== */
+
+    checkIn.addEventListener("change", function () {
+
+        if (checkIn.value) {
+
+            const selectedDate = new Date(
+                checkIn.value + "T00:00:00"
+            );
+
+            selectedDate.setDate(
+                selectedDate.getDate() + 1
+            );
+
+            const year = selectedDate.getFullYear();
+
+            const month = String(
+                selectedDate.getMonth() + 1
+            ).padStart(2, "0");
+
+            const day = String(
+                selectedDate.getDate()
+            ).padStart(2, "0");
+
+            const minimumCheckout =
+                `${year}-${month}-${day}`;
+
+            checkOut.min = minimumCheckout;
+
+            if (
+                checkOut.value &&
+                checkOut.value <= checkIn.value
+            ) {
+
+                checkOut.value = minimumCheckout;
+
+            }
+
+        }
+
+        calculateBooking();
+
+    });
+
+
+    checkOut.addEventListener("change", function () {
+
+        calculateBooking();
+
+    });
+
+
+    /* ========================================================
+       ROOM CHANGE
+    ======================================================== */
+
+    room.addEventListener("change", function () {
+
+        calculateBooking();
+
+    });
+
+
+    adults.addEventListener("change", function () {
+
+        calculateBooking();
+
+    });
+
+
+    children.addEventListener("change", function () {
+
+        calculateBooking();
+
+    });
+
+
+    /* ========================================================
+       CALCULATE NIGHTS
+    ======================================================== */
+
+    function calculateNights() {
+
+        if (!checkIn.value || !checkOut.value) {
+
+            return 0;
+
+        }
+
+        const start = new Date(
+            checkIn.value + "T00:00:00"
+        );
+
+        const end = new Date(
+            checkOut.value + "T00:00:00"
+        );
+
+        const difference =
+            end.getTime() - start.getTime();
+
+        const nights =
+            Math.ceil(
+                difference / (1000 * 60 * 60 * 24)
+            );
+
+        return nights > 0 ? nights : 0;
+
+    }
+
+
+    /* ========================================================
+       CALCULATE BOOKING
+    ======================================================== */
+
+    function calculateBooking() {
+
+        const selectedOption =
+            room.options[room.selectedIndex];
+
+        const roomName =
+            selectedOption.dataset.name;
+
+        const price =
+            Number(selectedOption.dataset.price);
+
+        const nights =
+            calculateNights();
+
+        const roomAmount =
+            price * nights;
+
+        /*
+            Service Charge = 10%
+        */
+
+        const service =
+            roomAmount * 0.10;
+
+        /*
+            Tax = 5%
+        */
+
+        const tax =
+            roomAmount * 0.05;
+
+        const total =
+            roomAmount + service + tax;
+
+
+        /* Room */
+
+        summaryRoom.textContent =
+            roomName;
+
+        summaryPrice.textContent =
+            "$" + price.toFixed(0);
+
+
+        /* Dates */
+
+        summaryCheckIn.textContent =
+            formatDate(checkIn.value);
+
+        summaryCheckOut.textContent =
+            formatDate(checkOut.value);
+
+
+        /* Guests */
+
+        const adultCount =
+            Number(adults.value);
+
+        const childCount =
+            Number(children.value);
+
+        let guestText =
+            adultCount +
+            (adultCount === 1 ? " Adult" : " Adults");
+
+        if (childCount > 0) {
+
+            guestText +=
+                " · " +
+                childCount +
+                (childCount === 1 ? " Child" : " Children");
+
+        }
+
+        summaryGuests.textContent =
+            guestText;
+
+
+        /* Nights */
+
+        summaryNights.textContent =
+            nights;
+
+
+        /* Price */
+
+        roomTotal.textContent =
+            "$" + roomAmount.toFixed(2);
+
+        serviceFee.textContent =
+            "$" + service.toFixed(2);
+
+        taxAmount.textContent =
+            "$" + tax.toFixed(2);
+
+        grandTotal.textContent =
+            "$" + total.toFixed(2);
+
+    }
+
+
+    /* ========================================================
+       INITIAL CALCULATION
+    ======================================================== */
+
+    calculateBooking();
+
+
+    /* ========================================================
+       VALIDATE BOOKING
+    ======================================================== */
+
+    function validateBooking() {
+
+        if (!checkIn.value) {
+
+            alert("Please select your check-in date.");
+
+            checkIn.focus();
+
+            return false;
+
+        }
+
+
+        if (!checkOut.value) {
+
+            alert("Please select your check-out date.");
+
+            checkOut.focus();
+
+            return false;
+
+        }
+
+
+        const nights =
+            calculateNights();
+
+        if (nights <= 0) {
+
+            alert(
+                "Check-out date must be after check-in date."
+            );
+
+            checkOut.focus();
+
+            return false;
+
+        }
+
+
+        const firstName =
+            document.getElementById("firstName").value.trim();
+
+        if (!firstName) {
+
+            alert("Please enter your first name.");
+
+            document.getElementById("firstName").focus();
+
+            return false;
+
+        }
+
+
+        const lastName =
+            document.getElementById("lastName").value.trim();
+
+        if (!lastName) {
+
+            alert("Please enter your last name.");
+
+            document.getElementById("lastName").focus();
+
+            return false;
+
+        }
+
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        if (!email) {
+
+            alert("Please enter your email address.");
+
+            document.getElementById("email").focus();
+
+            return false;
+
+        }
+
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        if (!phone) {
+
+            alert("Please enter your phone number.");
+
+            document.getElementById("phone").focus();
+
+            return false;
+
+        }
+
+
+        const terms =
+            document.getElementById("terms");
+
+        if (!terms.checked) {
+
+            alert(
+                "Please accept the terms and conditions."
+            );
+
+            terms.focus();
+
+            return false;
+
+        }
+
+
+        return true;
+
+    }
+
+
+    /* ========================================================
+       CONFIRM BOOKING
+    ======================================================== */
+
+    function confirmReservation() {
+
+        if (!validateBooking()) {
+
+            return;
+
+        }
+
+
+        const selectedOption =
+            room.options[room.selectedIndex];
+
+        const roomName =
+            selectedOption.dataset.name;
+
+        const price =
+            Number(selectedOption.dataset.price);
+
+        const nights =
+            calculateNights();
+
+        const roomAmount =
+            price * nights;
+
+        const service =
+            roomAmount * 0.10;
+
+        const tax =
+            roomAmount * 0.05;
+
+        const total =
+            roomAmount + service + tax;
+
+
+        /* Guest */
+
+        const firstName =
+            document.getElementById("firstName").value.trim();
+
+        const lastName =
+            document.getElementById("lastName").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const country =
+            document.getElementById("country").value;
+
+        const city =
+            document.getElementById("city").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const specialRequest =
+            document.getElementById("specialRequest").value.trim();
+
+
+        /* Generate Booking ID */
+
+        const bookingId =
+            "GH-" +
+            Date.now()
+                .toString()
+                .slice(-8);
+
+
+        /* Booking Object */
+
+        const bookingData = {
+
+            bookingId: bookingId,
+
+            room: room.value,
+
+            roomName: roomName,
+
+            pricePerNight: price,
+
+            checkIn: checkIn.value,
+
+            checkOut: checkOut.value,
+
+            nights: nights,
+
+            adults: Number(adults.value),
+
+            children: Number(children.value),
+
+            firstName: firstName,
+
+            lastName: lastName,
+
+            fullName:
+                firstName + " " + lastName,
+
+            email: email,
+
+            phone: phone,
+
+            country: country,
+
+            city: city,
+
+            address: address,
+
+            specialRequest: specialRequest,
+
+            roomAmount: roomAmount,
+
+            serviceFee: service,
+
+            tax: tax,
+
+            total: total,
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        /* Save */
+
+        localStorage.setItem(
+            "hotelBooking",
+            JSON.stringify(bookingData)
+        );
+
+
+        /* Show Confirmation */
+
+        document.getElementById("bookingId")
+            .textContent = bookingId;
+
+        document.getElementById("confirmedGuest")
+            .textContent =
+            bookingData.fullName;
+
+        document.getElementById("confirmedRoom")
+            .textContent =
+            roomName;
+
+        document.getElementById("confirmedTotal")
+            .textContent =
+            "$" + total.toFixed(2);
+
+
+        const successModal =
+            document.getElementById("successModal");
+
+        successModal.classList.remove("hidden");
+
+        successModal.classList.add("flex");
+
+    }
+
+
+    /* ========================================================
+       CONFIRM BUTTONS
+    ======================================================== */
+
+    document.getElementById("confirmBooking")
+        .addEventListener(
+            "click",
+            confirmReservation
+        );
+
+
+    document.getElementById("confirmBookingMobile")
+        .addEventListener(
+            "click",
+            confirmReservation
+        );
+
+
+    /* ========================================================
+       CLOSE MODAL
+    ======================================================== */
+
+    document.getElementById("closeModal")
+        .addEventListener("click", function () {
+
+            const modal =
+                document.getElementById("successModal");
+
+            modal.classList.add("hidden");
+
+            modal.classList.remove("flex");
+
+        });
+
+
+    /* ========================================================
+       CLOSE MODAL OUTSIDE
+    ======================================================== */
+
+    document.getElementById("successModal")
+        .addEventListener("click", function (event) {
+
+            if (event.target === this) {
+
+                this.classList.add("hidden");
+
+                this.classList.remove("flex");
+
+            }
+
+        });
+
+});
+
+</script>
+
+</body>
+</html>
